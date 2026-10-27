@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "tertiary-fixed": "#ffdea5", "primary-container": "#164734", "outline": "#717973", "on-tertiary-fixed-variant": "#5b430c", "primary-fixed": "#bbeed3", "tertiary-fixed-dim": "#e6c180", "background": "#effdf3", "on-background": "#121e19", "on-primary-container": "#84b59c", "inverse-surface": "#27332d", "surface-container-high": "#deece2", "surface-variant": "#d8e6dd", "on-secondary-fixed": "#002112", "surface-bright": "#effdf3", "on-primary-fixed": "#002115", "surface-container": "#e3f1e8", "tertiary-container": "#523b04", "error-container": "#ffdad6", "error": "#ba1a1a", "on-secondary-fixed-variant": "#005233", "on-error": "#ffffff", "tertiary": "#382600", "on-secondary": "#ffffff", "surface": "#effdf3", "primary-fixed-dim": "#9fd1b8", "inverse-on-surface": "#e6f4eb", "on-error-container": "#93000a", "surface-container-highest": "#d8e6dd", "on-secondary-container": "#26714e", "secondary": "#1f6b49", "surface-container-low": "#e9f7ee", "primary": "#003020", "on-tertiary-container": "#c7a566", "on-surface-variant": "#414944", "surface-tint": "#386752", "secondary-container": "#a7f3c7", "secondary-fixed-dim": "#8cd6ac", "on-primary": "#ffffff", "inverse-primary": "#9fd1b8", "on-primary-fixed-variant": "#1f4f3c", "surface-container-lowest": "#ffffff", "surface-dim": "#d0ddd4", "on-surface": "#121e19", "outline-variant": "#c0c9c2", "secondary-fixed": "#a7f3c7", "on-tertiary-fixed": "#271900", "on-tertiary": "#ffffff" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-lg": "2rem", "margin-mobile": "1.25rem", "space-xs": "0.375rem", "margin": "3rem", "space-sm": "0.75rem", "gutter-mobile": "1rem", "space-md": "1.25rem", "gutter": "1.5rem", "space-xl": "3.5rem" }, fontFamily: { "label-sm": ["Manrope"], "label-lg": ["Manrope"], "label-md": ["Manrope"], "body-lg": ["Manrope"], "headline-md": ["Manrope"], "display-lg": ["Manrope"], "display-lg-mobile": ["Manrope"], "body-sm": ["Manrope"], "headline-sm": ["Manrope"], "body-md": ["Manrope"], "headline-lg": ["Manrope"], "headline-lg-mobile": ["Manrope"] }, fontSize: { "label-sm": ["0.6875rem", { "lineHeight": "0.875rem", "letterSpacing": "0.06em", "fontWeight": "700" }], "label-lg": ["0.875rem", { "lineHeight": "1.25rem", "letterSpacing": "0.02em", "fontWeight": "600" }], "label-md": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.04em", "fontWeight": "600" }], "body-lg": ["1.125rem", { "lineHeight": "1.875rem", "letterSpacing": "0em", "fontWeight": "400" }], "headline-md": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.015em", "fontWeight": "600" }], "display-lg": ["3.5rem", { "lineHeight": "4rem", "letterSpacing": "-0.025em", "fontWeight": "700" }], "display-lg-mobile": ["2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-sm": ["0.875rem", { "lineHeight": "1.375rem", "letterSpacing": "0.005em", "fontWeight": "400" }], "headline-sm": ["1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-md": ["1rem", { "lineHeight": "1.625rem", "letterSpacing": "0em", "fontWeight": "400" }], "headline-lg": ["2.5rem", { "lineHeight": "3rem", "letterSpacing": "-0.02em", "fontWeight": "600" }], "headline-lg-mobile": ["1.875rem", { "lineHeight": "2.375rem", "letterSpacing": "-0.015em", "fontWeight": "600" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(22,71,52,0.04)]"><div class="h-16 px-gutter-mobile flex items-center justify-between gap-space-xs"><div class="flex items-center gap-1"><button aria-label="Go Back" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:text-primary hover:bg-surface-container-low transition-colors" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><img alt="DXNANCHAL Product Guide Logo" class="h-7 w-auto object-contain hidden xs:block" src="https://lh3.googleusercontent.com/aida/AEtjO1VVut_Xse5NsVxtnjRz-My8zc6MYM7EdwkELTr7L0IPhFET7KlzjID8ZdT_HqraZa2W0tEP6ppm4bwZoy_sDM_YRhqRh05BYCYy7WWVwMhUNJpb84jjpH0JQYpf3bRF3YqRO_0KJFaV1_61BxO0OD14aJQzucFR0oie1M-GPMaaZqjbHJBTTVjRIT9It8Io1MBZl1tM74OvDssfxc9zoyQHAmb0FAzHd4UfcpdqqGxLp5l-8g_aaMniP0s"/><h1 class="font-headline-sm text-headline-sm text-primary font-bold truncate max-w-[190px]">Product Detail</h1></div><div class="flex items-center gap-2"><div aria-label="Language Selector" class="inline-flex items-center bg-surface-container-high rounded-full p-0.5" role="group"><button class="px-2 py-1 rounded-full bg-surface-container-lowest text-primary font-label-sm text-label-sm shadow-[0_1px_4px_rgba(22,71,52,0.06)] transition-all" type="button">EN</button><button class="px-2 py-1 rounded-full text-on-surface-variant font-label-sm text-label-sm hover:text-on-surface transition-all" type="button">हिन्दी</button></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-safe bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- 1. Breadcrumb Navigation -->
+<nav aria-label="Breadcrumb" class="px-margin-mobile pt-3 pb-2 flex items-center gap-1.5 overflow-x-auto whitespace-nowrap text-on-surface-variant font-label-md text-label-md">
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[16px]">home</span>
+<span>Home</span>
+</a>
+<span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Products</a>
+<span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span>
+<span class="text-primary font-semibold truncate max-w-[160px]">RG &amp; GL Companion Duo</span>
+</nav>
+<!-- 2. Product Hero Header -->
+<section class="px-margin-mobile pt-2 pb-6 flex flex-col gap-4">
+<!-- Meta Badges -->
+<div class="flex flex-wrap items-center gap-2">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+        Dietary Supplements
+      </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-low text-primary font-label-sm text-label-sm shadow-sm">
+<span class="material-symbols-outlined text-[14px] text-secondary">verified</span>
+        Label Archive Verified • Oct 2024
+      </span>
+</div>
+<!-- Title & Editorial Description -->
+<div class="flex flex-col gap-2">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight font-bold">
+        DXN Reishi Gano (RG) &amp; Ganocelium (GL)
+      </h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+        A complementary dual-formulation pairing mature <em class="font-medium not-italic text-primary">Ganoderma lucidum</em> mushroom with youthful mycelium culture.
+      </p>
+</div>
+<!-- Dual Hero Botanical Showcase -->
+<div class="relative w-full rounded-2xl bg-surface-container-low p-3.5 shadow-sm overflow-hidden flex flex-col gap-3">
+<div class="grid grid-cols-2 gap-2.5">
+<div class="relative rounded-xl overflow-hidden bg-surface-container flex flex-col items-center">
+<img class="w-full h-36 object-cover" data-alt="Close up editorial studio shot of mature red Ganoderma lucidum glossy mushroom fruiting body on a clean organic sage green backdrop, gentle natural morning lighting, botanical purity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMRO3LuTdAFelWHrVMLxxkN71U7JCNtqM3WiX9UaUKoYE0OImvcs6GYoGZ4Y3EsdCdCu9_0VGV0j-bGTRBy295hAvAsj6PqMuJtv99N04vawyxRDwXaYwF-LN3rTIh4lTHvuHw0xt82X6ayCZWayW4au-oiUjqxe8ix0jBmEAjubKN5THgZg13rfq0a6e6KYNpASOElFdo9A4d0KlXpw2n1FYjImAn7oONfCJRLdRNEhah1Yz9kHytdg"/>
+<div class="absolute bottom-2 left-2 right-2 px-2 py-1 bg-surface-container-lowest/90 backdrop-blur-md rounded-lg flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-primary font-bold">RG (Fruiting)</span>
+<span class="material-symbols-outlined text-[14px] text-secondary">nature</span>
+</div>
+</div>
+<div class="relative rounded-xl overflow-hidden bg-surface-container flex flex-col items-center">
+<img class="w-full h-36 object-cover" data-alt="Micro-botanical photography of cultured Ganoderma lucidum mycelium threads with tender organic golden rootlets under soft diffuse laboratory daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbQnP5FhZDZ40khVDi89zAFvTG9hq0w2AOB3t1gQFlD8AHeHUmZ4eNe65qqcX8tHgxDvDc-bITQShnX_rNXG7SQ-5SSFSCA0YF8VOoybBhKqJN3bNm8Df4qoNnMu3eqkJaTMUFLVKmlpbYYlhV28p4ILVVjCPUe9TD-JgAU1a_cFTOpcW2DjOGPBegJb4FOhVQfhjIA9aVjfYwaVDVfeUsb-5U3OlNip74NPnkjui1pB5y6Gra-S31Mg"/>
+<div class="absolute bottom-2 left-2 right-2 px-2 py-1 bg-surface-container-lowest/90 backdrop-blur-md rounded-lg flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-primary font-bold">GL (Mycelium)</span>
+<span class="material-symbols-outlined text-[14px] text-secondary">grain</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between px-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-secondary">nest_eco_leaf</span>
+          100% Pure Botanical Extracts
+        </span>
+<span class="font-semibold text-primary">Dual Synergistic Set</span>
+</div>
+</div>
+<!-- Quick Action Buttons -->
+<div class="flex items-center gap-2 pt-1">
+<a class="flex-1 inline-flex items-center justify-center gap-1.5 h-11 px-4 rounded-full bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container active:scale-[0.98] transition-all shadow-sm" href="#ingredients-section">
+<span class="material-symbols-outlined text-[18px]">biotech</span>
+<span>Explore Ingredients</span>
+</a>
+<button class="inline-flex items-center justify-center gap-1 h-11 px-3.5 rounded-full bg-surface-container-high text-primary hover:bg-surface-variant active:scale-[0.98] transition-all font-label-md text-label-md" id="compare-btn" onclick="toggleCompareState()" title="Compare Product" type="button">
+<span class="material-symbols-outlined text-[18px]" id="compare-icon">add_circle</span>
+<span id="compare-text">Compare</span>
+</button>
+<button aria-label="Share Guide" class="w-11 h-11 shrink-0 rounded-full bg-surface-container-high text-primary flex items-center justify-center hover:bg-surface-variant active:scale-[0.98] transition-all" onclick="shareGuideSheet()" type="button">
+<span class="material-symbols-outlined text-[18px]">share</span>
+</button>
+</div>
+</section>
+<!-- 3. In-Depth Side-by-Side Dual Comparison (RG vs GL) -->
+<section class="px-margin-mobile py-4 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Comparative Breakdown</span>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Dual Botanical Matrix</h3>
+</div>
+<span class="material-symbols-outlined text-secondary text-[24px]">balance</span>
+</div>
+<!-- Comparison Table Card -->
+<div class="w-full bg-surface-container-lowest rounded-2xl p-4 shadow-sm flex flex-col gap-4">
+<!-- Headers -->
+<div class="grid grid-cols-2 gap-3 pb-3 border-b-0 bg-surface-container-low p-2.5 rounded-xl">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center shrink-0">
+<span class="font-label-sm text-label-sm text-on-primary font-bold">RG</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-primary font-bold leading-tight">Reishi Gano</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Mature Stage</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-secondary flex items-center justify-center shrink-0">
+<span class="font-label-sm text-label-sm text-on-secondary font-bold">GL</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-primary font-bold leading-tight">Ganocelium</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Mycelium Stage</p>
+</div>
+</div>
+</div>
+<!-- Parameter 1: Harvest Stage -->
+<div class="flex flex-col gap-1.5 pb-2">
+<div class="flex items-center gap-1.5 text-primary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px] text-secondary">schedule</span>
+          MUSHROOM HARVEST STAGE
+        </div>
+<div class="grid grid-cols-2 gap-3 font-body-sm text-body-sm">
+<div class="bg-surface-container-low/60 rounded-xl p-2.5 text-on-surface">
+            Mature <strong class="text-primary font-semibold">90-day</strong> cultivated red mushroom fruiting body.
+          </div>
+<div class="bg-surface-container-low/60 rounded-xl p-2.5 text-on-surface">
+            Tender <strong class="text-primary font-semibold">14-day</strong> harvested mushroom mycelium filaments.
+          </div>
+</div>
+</div>
+<!-- Parameter 2: Characteristic Profile -->
+<div class="flex flex-col gap-1.5 pb-2">
+<div class="flex items-center gap-1.5 text-primary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px] text-secondary">bubble_chart</span>
+          CHARACTERISTIC BIOCHEMICAL PROFILE
+        </div>
+<div class="grid grid-cols-2 gap-3 font-body-sm text-body-sm">
+<div class="bg-surface-container-low/60 rounded-xl p-2.5 text-on-surface">
+            Rich in polysaccharides, <strong class="text-primary font-medium">triterpenoids</strong>, adenosine, &amp; Ganoderic essence.
+          </div>
+<div class="bg-surface-container-low/60 rounded-xl p-2.5 text-on-surface">
+            High in <strong class="text-primary font-medium">organic germanium</strong>, polysaccharidal mycelial fractions, &amp; minerals.
+          </div>
+</div>
+</div>
+<!-- Parameter 3: Standard Pack Sizes -->
+<div class="flex flex-col gap-1.5 pb-2">
+<div class="flex items-center gap-1.5 text-primary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px] text-secondary">inventory_2</span>
+          STANDARD PACK SIZES
+        </div>
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-surface-container-low/60 rounded-xl p-2.5 flex items-center justify-between text-on-surface font-label-sm text-label-sm">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-primary font-semibold">30</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-primary font-semibold">90</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-primary font-semibold">360</span>
+</div>
+<div class="bg-surface-container-low/60 rounded-xl p-2.5 flex items-center justify-between text-on-surface font-label-sm text-label-sm">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-primary font-semibold">30</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-primary font-semibold">90</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-primary font-semibold">360</span>
+</div>
+</div>
+</div>
+<!-- Parameter 4: Recommended Pairing Banner -->
+<div class="bg-primary text-on-primary rounded-xl p-3 flex items-start gap-2.5">
+<span class="material-symbols-outlined text-secondary-fixed text-[20px] shrink-0 mt-0.5">join_right</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-secondary-fixed">Recommended Companion Ratio</span>
+<p class="font-body-sm text-body-sm text-on-primary/90 pt-0.5 leading-snug">
+            Both formulations are traditionally consumed together in equal 1:1 proportion as balanced botanical companions.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Ingredients and Verified Composition -->
+<section class="px-margin-mobile py-4 flex flex-col gap-3" id="ingredients-section">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Purity &amp; Formulation</span>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Ingredients &amp; Composition</h3>
+</div>
+<div class="grid grid-cols-1 gap-3">
+<!-- RG Capsule Spec Card -->
+<div class="bg-surface-container-lowest rounded-2xl p-4 shadow-sm flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span class="font-label-lg text-label-lg text-primary font-bold">RG Formulation</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Fruit Body</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface">
+<strong class="font-semibold text-primary">100% Ganoderma lucidum powder</strong> (Fruit body), vegetable capsule shell.
+        </p>
+<div class="flex items-center gap-1.5 pt-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span>
+<span>Zero fillers, binders, or synthetic coatings</span>
+</div>
+</div>
+<!-- GL Capsule Spec Card -->
+<div class="bg-surface-container-lowest rounded-2xl p-4 shadow-sm flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-label-lg text-label-lg text-primary font-bold">GL Formulation</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Mycelium</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface">
+<strong class="font-semibold text-primary">100% Ganoderma lucidum mycelium powder</strong>, vegetable capsule shell.
+        </p>
+<div class="flex items-center gap-1.5 pt-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span>
+<span>Plant-derived vegetarian hypromellose capsule</span>
+</div>
+</div>
+<!-- Transparency Note -->
+<div class="bg-surface-container-high/60 rounded-xl p-3 flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[20px] text-primary shrink-0">fact_check</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-primary">Verified Clean Label Guarantee</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            No artificial preservatives, colorants, or synthetic binders listed on verified pack archive.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. Directions for Use & Serving Instructions -->
+<section class="px-margin-mobile py-4 flex flex-col gap-3">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Serving Protocol</span>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Directions &amp; Storage</h3>
+</div>
+<div class="bg-surface-container-lowest rounded-2xl p-4 shadow-sm flex flex-col gap-3.5">
+<!-- Label Directions -->
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">local_cafe</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-primary font-bold">Verified Label Directions</span>
+<p class="font-body-md text-body-md text-on-surface pt-0.5 leading-relaxed">
+            Take <strong class="text-primary font-semibold">1 to 2 pairs daily</strong> before meals with lukewarm water during initial week, or as directed by an integrative healthcare practitioner.
+          </p>
+</div>
+</div>
+<!-- Storage Instructions -->
+<div class="flex items-start gap-3 pt-2">
+<div class="w-9 h-9 rounded-full bg-surface-container-high text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">thermostat</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-primary font-bold">Optimal Storage</span>
+<p class="font-body-md text-body-md text-on-surface pt-0.5 leading-relaxed">
+            Store in a cool, dry place away from direct sunlight and moisture. Reseal tightly after each opening.
+          </p>
+</div>
+</div>
+<!-- Daily Ritual Tip -->
+<div class="bg-secondary-container/50 rounded-xl p-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">lightbulb</span>
+<span class="font-label-sm text-label-sm text-on-secondary-container">
+          Pro Tip: Pairing with morning warm water aids smooth natural absorption.
+        </span>
+</div>
+</div>
+</section>
+<!-- 6. Structured Product Facts Panel (Table / Spec Grid) -->
+<section class="px-margin-mobile py-4 flex flex-col gap-3">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Compliance Data</span>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Structured Product Facts</h3>
+</div>
+<div class="bg-surface-container-lowest rounded-2xl p-4 shadow-sm flex flex-col divide-y-0">
+<div class="flex flex-col gap-3">
+<!-- Row 1 -->
+<div class="flex items-baseline justify-between py-1.5 bg-surface-container-low/40 px-3 rounded-lg">
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">Product Name</span>
+<span class="font-label-md text-label-md text-primary font-bold text-right">DXN Reishi Gano &amp; Ganocelium</span>
+</div>
+<!-- Row 2 -->
+<div class="flex items-baseline justify-between py-1.5 px-3">
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">Category</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold text-right">Botanical Dietary Supplement</span>
+</div>
+<!-- Row 3 -->
+<div class="flex items-baseline justify-between py-1.5 bg-surface-container-low/40 px-3 rounded-lg">
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">Origin / Facility</span>
+<span class="font-label-md text-label-md text-on-surface text-right font-medium">DXN Holdings Berhad (Malaysia / Regional Facility)</span>
+</div>
+<!-- Row 4 -->
+<div class="flex items-start justify-between py-1.5 px-3 gap-2">
+<span class="font-label-md text-label-md text-on-surface-variant font-medium shrink-0">Allergen Warning</span>
+<span class="font-body-sm text-body-sm text-on-surface text-right">Formulated in a facility handling mushrooms. No gluten or dairy reported.</span>
+</div>
+<!-- Row 5 -->
+<div class="flex items-baseline justify-between py-1.5 bg-surface-container-low/40 px-3 rounded-lg">
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">Official Source</span>
+<span class="font-label-md text-label-md text-on-surface text-right font-medium">Regional catalogue &amp; packaging archive</span>
+</div>
+<!-- Row 6 -->
+<div class="flex items-baseline justify-between py-1.5 px-3">
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">Verification Date</span>
+<span class="font-label-md text-label-md text-secondary font-bold text-right">October 2024 (Review cycle Q4)</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. Frequently Asked Questions (Interactive Accordion) -->
+<section class="px-margin-mobile py-4 flex flex-col gap-3">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Knowledge Base</span>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Frequently Asked Questions</h3>
+</div>
+<div class="flex flex-col gap-2.5" id="faq-accordion-group">
+<!-- FAQ 1 -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-sm overflow-hidden transition-all duration-200" id="faq-card-1">
+<button class="w-full text-left p-4 flex items-center justify-between gap-3 focus:outline-none" onclick="toggleFaq(1)" type="button">
+<span class="font-headline-sm text-[1.05rem] text-primary font-bold">What is the main difference between RG and GL?</span>
+<span class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center shrink-0 transition-transform duration-200" id="faq-chevron-1">
+<span class="material-symbols-outlined text-[18px] text-primary">expand_more</span>
+</span>
+</button>
+<div class="px-4 pb-4 hidden" id="faq-body-1">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<strong class="text-primary font-semibold">RG (Reishi Gano)</strong> is derived from the mature 90-day fruit body of <em class="italic">Ganoderma</em>, known for its dense triterpenoid profile, while <strong class="text-primary font-semibold">GL (Ganocelium)</strong> is harvested at 14 days from the delicate mycelium threads rich in organic germanium and natural enzyme precursors.
+          </p>
+</div>
+</div>
+<!-- FAQ 2 -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-sm overflow-hidden transition-all duration-200" id="faq-card-2">
+<button class="w-full text-left p-4 flex items-center justify-between gap-3 focus:outline-none" onclick="toggleFaq(2)" type="button">
+<span class="font-headline-sm text-[1.05rem] text-primary font-bold">Should RG and GL always be taken together?</span>
+<span class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center shrink-0 transition-transform duration-200" id="faq-chevron-2">
+<span class="material-symbols-outlined text-[18px] text-primary">expand_more</span>
+</span>
+</button>
+<div class="px-4 pb-4 hidden" id="faq-body-2">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            In traditional usage guidelines, they are recommended as complementary pairs to provide balanced holistic support. However, each formulation can also be consumed independently based on personal health goals or practitioner advice.
+          </p>
+</div>
+</div>
+<!-- FAQ 3 -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-sm overflow-hidden transition-all duration-200" id="faq-card-3">
+<button class="w-full text-left p-4 flex items-center justify-between gap-3 focus:outline-none" onclick="toggleFaq(3)" type="button">
+<span class="font-headline-sm text-[1.05rem] text-primary font-bold">Are these products approved as medicines?</span>
+<span class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center shrink-0 transition-transform duration-200" id="faq-chevron-3">
+<span class="material-symbols-outlined text-[18px] text-primary">expand_more</span>
+</span>
+</button>
+<div class="px-4 pb-4 hidden" id="faq-body-3">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<strong class="text-primary font-semibold">No.</strong> RG and GL are dietary botanical supplements and are not designed, licensed, or intended to diagnose, treat, cure, or prevent any illness or disease.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- 8. Related Products Grid -->
+<section class="px-margin-mobile py-4 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Botanical Synergy</span>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Related Catalog Products</h3>
+</div>
+<a class="font-label-md text-label-md text-primary font-bold flex items-center gap-0.5 hover:underline" href="#">
+        View All <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- 3 Related Products Cards -->
+<div class="grid grid-cols-1 gap-3">
+<!-- Item 1: DXN Spirulina -->
+<div class="bg-surface-container-lowest rounded-2xl p-3 shadow-sm flex items-center gap-3.5 hover:bg-surface-container-low transition-colors">
+<div class="w-20 h-20 rounded-xl overflow-hidden bg-surface-container shrink-0">
+<img class="w-full h-full object-cover" data-alt="Microalgae Spirulina pure dark green organic tablets arranged on an ivory ceramic presentation plate with natural leaves in background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbWlbrcIMc25fisRuDN7knDu27zRtvOR7p_-B9v4ZPXbVp-3BO8NScOKd11DgyfIHya3o1xJZ2V3MnQ23ocQ5Y1XeMwhxKuhIDJui3fVISt0MnenZa1eDA349qsL4Auz3dorczXDzvgACITfelKV21tTpYr7Tgt_lzghzcJrRyBFNZzNyrrgZoFSLSY8LCv5FGqrT-cIxoelSP6_pnRLD8_rWoAghGYcYy7s_4_mk9WM48wNFuUR5hCw"/>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<span class="inline-flex w-fit px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+            Dietary Supplement
+          </span>
+<h4 class="font-headline-sm text-[1rem] text-primary font-bold truncate pt-0.5">DXN Spirulina</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">Blue-green microalgae rich in complete plant protein and chlorophyll.</p>
+<div class="flex items-center gap-1 text-primary font-label-md text-label-md font-semibold pt-1">
+<span>Explore Guide</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Item 2: DXN Lingzhi Coffee 2-in-1 -->
+<div class="bg-surface-container-lowest rounded-2xl p-3 shadow-sm flex items-center gap-3.5 hover:bg-surface-container-low transition-colors">
+<div class="w-20 h-20 rounded-xl overflow-hidden bg-surface-container shrink-0">
+<img class="w-full h-full object-cover" data-alt="Artisanal cup of dark aromatic black Ganoderma Lingzhi coffee with steam rising against natural daylight wooden backdrop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBM05dg9je2qeLLel8BMLYpvIBwKCMAu-ornaH6jpl-QDHCyLFz-8iDQyzj1aSC3WyvhxJWlCUN7iBWcbDfjvoHE06idkm7ppN4hmOxv4q08K1ew65lGAsRcZhwjTIYGN7UKe7QAkstDgtDccIMcy0ptEugFj6mQ2NC9ZjTcuvkj5b4pB7zrDhu3j_Uo3kYGzCrOwRn_md5h7ABHS21v398Dm4NNAX6BDyQ_TbaQNWFEmLL21mjstD04g"/>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<span class="inline-flex w-fit px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm">
+            Beverage
+          </span>
+<h4 class="font-headline-sm text-[1rem] text-primary font-bold truncate pt-0.5">DXN Lingzhi Coffee 2-in-1</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">Roasted Brazilian coffee beans blended with premium Ganoderma extract.</p>
+<div class="flex items-center gap-1 text-primary font-label-md text-label-md font-semibold pt-1">
+<span>Explore Guide</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Item 3: DXN Reishi Gano Tea -->
+<div class="bg-surface-container-lowest rounded-2xl p-3 shadow-sm flex items-center gap-3.5 hover:bg-surface-container-low transition-colors">
+<div class="w-20 h-20 rounded-xl overflow-hidden bg-surface-container shrink-0">
+<img class="w-full h-full object-cover" data-alt="Clear glass teacup filled with amber colored Reishi Gano botanical tea surrounded by dried Camellia sinensis tea leaves" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLkjxS1YB6OfNzH10M768ft8loNEmivcd1FLj9SXsUuKXm-GzA6aLA0B9vSIaIQhERIKNFZWQbmSH8ekiFnSxAht2kd4VcF7mUDZKVDkOH7L1GegKlegvHwfo35rUjp-egREFAi5raQSdR5djFnMydP0i1GQVAeOAwD8mdnUlNX60SNxiXdWq4HnSDIuEJXcAUq0kdXGkGR9NWsMNkKvov2UoF_O4f0p99knFdP8zJyeVRl7T7kScYxg"/>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<span class="inline-flex w-fit px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm">
+            Beverage
+          </span>
+<h4 class="font-headline-sm text-[1rem] text-primary font-bold truncate pt-0.5">DXN Reishi Gano Tea</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">Invigorating selected Camellia sinensis leaves infused with Ganoderma.</p>
+<div class="flex items-center gap-1 text-primary font-label-md text-label-md font-semibold pt-1">
+<span>Explore Guide</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 9. Non-Alarmist Educational Disclaimer Box -->
+<section class="px-margin-mobile pt-3 pb-8 flex flex-col">
+<div class="bg-surface-container rounded-2xl p-4 shadow-sm flex flex-col gap-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">info</span>
+<span class="font-label-lg text-label-lg text-primary font-bold">Important Educational Notice</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+        The information provided on this page is for educational and product-research purposes only. Statements have not been evaluated as medical treatments. Always consult your physician or qualified healthcare provider before introducing dietary supplements.
+      </p>
+<div class="flex items-center justify-between pt-1 font-label-sm text-label-sm text-outline">
+<span>DXNANCHAL Product Education Series</span>
+<span>Version 4.2</span>
+</div>
+</div>
+</section>
+<!-- Interactive Logic for Accordion and Compare Button -->
+<script>
+    function toggleFaq(id) {
+      const body = document.getElementById('faq-body-' + id);
+      const chevron = document.getElementById('faq-chevron-' + id);
+      if (!body || !chevron) return;
+
+      const isHidden = body.classList.contains('hidden');
+      if (isHidden) {
+        body.classList.remove('hidden');
+        chevron.classList.add('rotate-180');
+      } else {
+        body.classList.add('hidden');
+        chevron.classList.remove('rotate-180');
+      }
+    }
+
+    let isCompared = false;
+    function toggleCompareState() {
+      isCompared = !isCompared;
+      const icon = document.getElementById('compare-icon');
+      const text = document.getElementById('compare-text');
+      const btn = document.getElementById('compare-btn');
+
+      if (isCompared) {
+        icon.innerText = 'check_circle';
+        text.innerText = 'Added';
+        btn.classList.add('bg-secondary-container', 'text-on-secondary-container');
+        btn.classList.remove('bg-surface-container-high', 'text-primary');
+      } else {
+        icon.innerText = 'add_circle';
+        text.innerText = 'Compare';
+        btn.classList.remove('bg-secondary-container', 'text-on-secondary-container');
+        btn.classList.add('bg-surface-container-high', 'text-primary');
+      }
+    }
+
+    function shareGuideSheet() {
+      if (navigator.share) {
+        navigator.share({
+          title: 'DXN RG & GL Companion Guide',
+          text: 'Verified composition and comparative facts for DXN Reishi Gano and Ganocelium.',
+          url: window.location.href,
+        }).catch(() => {});
+      } else {
+        // Fallback visual feedback
+        const btn = document.querySelector('[aria-label="Share Guide"]');
+        if (btn) {
+          const original = btn.innerHTML;
+          btn.innerHTML = '<span class="material-symbols-outlined text-[18px] text-secondary">check</span>';
+          setTimeout(() => { btn.innerHTML = original; }, 1500);
+        }
+      }
+    }
+  </script>
+</div></main></body></html>

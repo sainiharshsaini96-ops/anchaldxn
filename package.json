@@ -1,0 +1,29 @@
+{
+  "name": "stitch-dxnanchal-product-guide",
+  "version": "1.0.0",
+  "description": "DXNANCHAL Product Guide - Full Stack React Vite & Express Application",
+  "main": "backend/server.js",
+  "scripts": {
+    "install:all": "npm install && cd frontend && npm install && cd ../backend && npm install",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:client": "cd frontend && npm run dev",
+    "dev:server": "cd backend && npm run dev",
+    "start": "cd backend && npm start",
+    "build": "cd frontend && npm run build",
+    "seed": "cd backend && node seed/seedData.js"
+  },
+  "keywords": [
+    "react",
+    "vite",
+    "express",
+    "mongodb",
+    "dxn",
+    "botanical-guide",
+    "dxnanchal"
+  ],
+  "author": "Anchal",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}

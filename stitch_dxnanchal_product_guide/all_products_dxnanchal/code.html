@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "tertiary-fixed": "#ffdea5", "primary-container": "#164734", "outline": "#717973", "on-tertiary-fixed-variant": "#5b430c", "primary-fixed": "#bbeed3", "tertiary-fixed-dim": "#e6c180", "background": "#effdf3", "on-background": "#121e19", "on-primary-container": "#84b59c", "inverse-surface": "#27332d", "surface-container-high": "#deece2", "surface-variant": "#d8e6dd", "on-secondary-fixed": "#002112", "surface-bright": "#effdf3", "on-primary-fixed": "#002115", "surface-container": "#e3f1e8", "tertiary-container": "#523b04", "error-container": "#ffdad6", "error": "#ba1a1a", "on-secondary-fixed-variant": "#005233", "on-error": "#ffffff", "tertiary": "#382600", "on-secondary": "#ffffff", "surface": "#effdf3", "primary-fixed-dim": "#9fd1b8", "inverse-on-surface": "#e6f4eb", "on-error-container": "#93000a", "surface-container-highest": "#d8e6dd", "on-secondary-container": "#26714e", "secondary": "#1f6b49", "surface-container-low": "#e9f7ee", "primary": "#003020", "on-tertiary-container": "#c7a566", "on-surface-variant": "#414944", "surface-tint": "#386752", "secondary-container": "#a7f3c7", "secondary-fixed-dim": "#8cd6ac", "on-primary": "#ffffff", "inverse-primary": "#9fd1b8", "on-primary-fixed-variant": "#1f4f3c", "surface-container-lowest": "#ffffff", "surface-dim": "#d0ddd4", "on-surface": "#121e19", "outline-variant": "#c0c9c2", "secondary-fixed": "#a7f3c7", "on-tertiary-fixed": "#271900", "on-tertiary": "#ffffff" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-lg": "2rem", "margin-mobile": "1.25rem", "space-xs": "0.375rem", "margin": "3rem", "space-sm": "0.75rem", "gutter-mobile": "1rem", "space-md": "1.25rem", "gutter": "1.5rem", "space-xl": "3.5rem" }, fontFamily: { "label-sm": ["Manrope"], "label-lg": ["Manrope"], "label-md": ["Manrope"], "body-lg": ["Manrope"], "headline-md": ["Manrope"], "display-lg": ["Manrope"], "display-lg-mobile": ["Manrope"], "body-sm": ["Manrope"], "headline-sm": ["Manrope"], "body-md": ["Manrope"], "headline-lg": ["Manrope"], "headline-lg-mobile": ["Manrope"] }, fontSize: { "label-sm": ["0.6875rem", { "lineHeight": "0.875rem", "letterSpacing": "0.06em", "fontWeight": "700" }], "label-lg": ["0.875rem", { "lineHeight": "1.25rem", "letterSpacing": "0.02em", "fontWeight": "600" }], "label-md": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.04em", "fontWeight": "600" }], "body-lg": ["1.125rem", { "lineHeight": "1.875rem", "letterSpacing": "0em", "fontWeight": "400" }], "headline-md": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.015em", "fontWeight": "600" }], "display-lg": ["3.5rem", { "lineHeight": "4rem", "letterSpacing": "-0.025em", "fontWeight": "700" }], "display-lg-mobile": ["2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-sm": ["0.875rem", { "lineHeight": "1.375rem", "letterSpacing": "0.005em", "fontWeight": "400" }], "headline-sm": ["1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-md": ["1rem", { "lineHeight": "1.625rem", "letterSpacing": "0em", "fontWeight": "400" }], "headline-lg": ["2.5rem", { "lineHeight": "3rem", "letterSpacing": "-0.02em", "fontWeight": "600" }], "headline-lg-mobile": ["1.875rem", { "lineHeight": "2.375rem", "letterSpacing": "-0.015em", "fontWeight": "600" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(22,71,52,0.04)]"><div class="h-16 px-gutter-mobile flex items-center justify-between gap-space-xs"><div class="flex items-center gap-2"><img alt="DXNANCHAL Product Guide Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VVut_Xse5NsVxtnjRz-My8zc6MYM7EdwkELTr7L0IPhFET7KlzjID8ZdT_HqraZa2W0tEP6ppm4bwZoy_sDM_YRhqRh05BYCYy7WWVwMhUNJpb84jjpH0JQYpf3bRF3YqRO_0KJFaV1_61BxO0OD14aJQzucFR0oie1M-GPMaaZqjbHJBTTVjRIT9It8Io1MBZl1tM74OvDssfxc9zoyQHAmb0FAzHd4UfcpdqqGxLp5l-8g_aaMniP0s"/><div class="flex flex-col"><span class="font-label-md text-label-md text-primary font-bold leading-tight">DXNANCHAL</span><span class="font-label-sm text-label-sm text-on-surface-variant font-normal leading-none tracking-normal">All Products</span></div></div><div class="flex items-center gap-1.5"><div aria-label="Language Selector" class="inline-flex items-center bg-surface-container-high rounded-full p-0.5" role="group"><button class="px-2 py-1 rounded-full bg-surface-container-lowest text-primary font-label-sm text-label-sm shadow-[0_1px_4px_rgba(22,71,52,0.06)] transition-all" type="button">EN</button><button class="px-2 py-1 rounded-full text-on-surface-variant font-label-sm text-label-sm hover:text-on-surface transition-all" type="button">हिन्दी</button></div><button aria-label="Search Products" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">search</span></button><button aria-label="Menu Drawer" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">menu</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0 ml-0.5"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Top Botanical Glow Accent -->
+<div class="w-full h-1 bg-gradient-to-r from-secondary via-secondary-container to-primary"></div>
+<!-- Header / Breadcrumb / Title Area -->
+<section class="px-gutter-mobile pt-space-md pb-space-sm flex flex-col gap-space-xs">
+<!-- Breadcrumb -->
+<nav aria-label="Breadcrumbs" class="flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm">
+<a class="flex items-center gap-1 hover:text-primary transition-colors" data-path="home" href="#">
+<span class="material-symbols-outlined text-[16px]">spa</span>
+<span>Home</span>
+</a>
+<span class="material-symbols-outlined text-[14px] text-outline-variant">chevron_right</span>
+<span class="text-primary font-semibold">All Products</span>
+</nav>
+<!-- Page Title & Micro Counter -->
+<div class="flex items-baseline justify-between pt-1">
+<div class="flex items-baseline gap-2">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight font-bold">All Products</h1>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-bold shadow-sm">8 Verified</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-secondary">verified_user</span>
+<span>Indexed</span>
+</div>
+</div>
+<!-- Editorial Subtitle -->
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+      Browse our curated catalogue of eight verified DXN wellness, beverage, and personal care products with clinical botanical documentation.
+    </p>
+</section>
+<!-- Interactive Search & Filtering Hub (Sticky-friendly container) -->
+<section class="px-gutter-mobile py-space-xs flex flex-col gap-space-sm">
+<!-- Search Bar -->
+<div class="relative w-full rounded-xl bg-surface-container-lowest shadow-[0_4px_20px_-2px_rgba(22,71,52,0.05)]">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-secondary">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input aria-label="Search curated DXN products" class="w-full pl-10 pr-10 py-3 rounded-xl bg-transparent font-body-sm text-body-sm text-on-surface placeholder-outline focus:outline-none focus:ring-2 focus:ring-secondary/20 transition-all" id="product-search-input" placeholder="Search products, ingredients (e.g., Ganoderma, Noni)..." type="search"/>
+<button aria-label="Clear search query" class="hidden absolute inset-y-0 right-0 pr-3.5 flex items-center text-outline hover:text-primary transition-colors" id="clear-search-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+</button>
+</div>
+<!-- Category Filter Chips (Horizontal edge-scrolling) -->
+<div class="w-full flex items-center gap-2 overflow-x-auto pb-1 -mx-gutter-mobile px-gutter-mobile scrollbar-none" id="filter-pills-row">
+<button class="filter-pill active-pill whitespace-nowrap px-3.5 py-1.5 rounded-full font-label-md text-label-md transition-all flex items-center gap-1.5 bg-primary text-on-primary shadow-sm" data-category="all" type="button">
+<span>All</span>
+<span class="px-1.5 py-0.2 rounded-full text-[10px] font-bold bg-surface-container-lowest text-primary">8</span>
+</button>
+<button class="filter-pill whitespace-nowrap px-3.5 py-1.5 rounded-full font-label-md text-label-md transition-all flex items-center gap-1.5 bg-surface-container-lowest text-on-surface hover:bg-surface-container-low shadow-[0_2px_8px_rgba(22,71,52,0.04)]" data-category="beverages" type="button">
+<span>Beverages</span>
+<span class="px-1.5 py-0.2 rounded-full text-[10px] font-bold bg-surface-container-high text-on-surface-variant">4</span>
+</button>
+<button class="filter-pill whitespace-nowrap px-3.5 py-1.5 rounded-full font-label-md text-label-md transition-all flex items-center gap-1.5 bg-surface-container-lowest text-on-surface hover:bg-surface-container-low shadow-[0_2px_8px_rgba(22,71,52,0.04)]" data-category="supplements" type="button">
+<span>Dietary Supplements</span>
+<span class="px-1.5 py-0.2 rounded-full text-[10px] font-bold bg-surface-container-high text-on-surface-variant">2</span>
+</button>
+<button class="filter-pill whitespace-nowrap px-3.5 py-1.5 rounded-full font-label-md text-label-md transition-all flex items-center gap-1.5 bg-surface-container-lowest text-on-surface hover:bg-surface-container-low shadow-[0_2px_8px_rgba(22,71,52,0.04)]" data-category="oral" type="button">
+<span>Oral Care</span>
+<span class="px-1.5 py-0.2 rounded-full text-[10px] font-bold bg-surface-container-high text-on-surface-variant">1</span>
+</button>
+<button class="filter-pill whitespace-nowrap px-3.5 py-1.5 rounded-full font-label-md text-label-md transition-all flex items-center gap-1.5 bg-surface-container-lowest text-on-surface hover:bg-surface-container-low shadow-[0_2px_8px_rgba(22,71,52,0.04)]" data-category="personal" type="button">
+<span>Personal Care</span>
+<span class="px-1.5 py-0.2 rounded-full text-[10px] font-bold bg-surface-container-high text-on-surface-variant">1</span>
+</button>
+</div>
+<!-- Sorting & Reset Bar -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1.5 bg-surface-container-low px-2.5 py-1 rounded-lg">
+<span class="material-symbols-outlined text-[16px] text-secondary">tune</span>
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="sort-dropdown">Sort:</label>
+<select class="bg-transparent font-label-sm text-label-sm text-primary font-semibold focus:outline-none cursor-pointer" id="sort-dropdown">
+<option value="name-asc">Name (A–Z)</option>
+<option value="name-desc">Name (Z–A)</option>
+<option value="category">Category</option>
+</select>
+</div>
+<button class="font-label-sm text-label-sm text-secondary hover:text-primary flex items-center gap-1 py-1 px-2 rounded-md hover:bg-surface-container-low transition-colors" id="reset-filter-btn" type="button">
+<span class="material-symbols-outlined text-[14px]">refresh</span>
+<span>Reset Filters</span>
+</button>
+</div>
+</section>
+<!-- Product Count Indicator & Live Status -->
+<div class="px-gutter-mobile pt-2 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span id="active-results-count">Showing 8 of 8 products</span>
+<span class="flex items-center gap-1 text-secondary font-semibold">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+      Ready for Comparison
+    </span>
+</div>
+<!-- Product Cards Catalogue Section -->
+<section class="px-gutter-mobile py-space-sm flex flex-col gap-space-md" id="products-catalogue">
+<!-- CARD 1: Reishi Gano (RG) & Ganocelium (GL) -->
+<article class="w-full bg-surface-container-lowest rounded-2xl p-4 shadow-[0_4px_20px_-2px_rgba(22,71,52,0.05)] hover:shadow-[0_12px_32px_-4px_rgba(22,71,52,0.08)] transition-all duration-200 flex flex-col gap-3 relative overflow-hidden" data-category="supplements" data-ingredients="ganoderma lucidum fruit body rg mycelium gl" data-product-card="" data-title="dxn reishi gano rg ganocelium gl">
+<div class="flex gap-3.5">
+<!-- Botanical Product Thumbnail Frame -->
+<div class="w-24 h-28 rounded-xl bg-surface-container overflow-hidden shrink-0 relative flex items-center justify-center p-1.5 shadow-sm">
+<img class="w-full h-full object-cover rounded-lg" data-alt="Photorealistic studio shot of DXN Reishi Gano RG and Ganocelium GL dual medicinal mushroom dietary supplement bottles against an earthy sage background with natural Ganoderma lucidum accents, soft botanical lighting, serene wellness aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwxk-fdbAPOxAG0hWzJq0ZhU3wGlViK9hWjluzy7rbJch8s6hzUE7_GsJuAewsVYbJpE98WphSOepzxWkWqVURLkDds5QgWClbhXCJMjaWKAUZyB7Y51QQRjaQz9HBmJd20R19J1MAF10ucWfg7IUV5aKmfLOrRHtq_vx_YO0STieUP_3XnddsXFk03NZMmK5aT028RUdFF7TItzedozY11spcjbM9CHY16wJzZAemdu1Q21zyho0Zzw"/>
+<span class="absolute top-1 left-1 bg-primary text-on-primary font-label-sm text-[9px] px-1.5 py-0.5 rounded-full font-bold">Pair</span>
+</div>
+<!-- Meta Details -->
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1 mb-1">
+<span class="font-label-sm text-[10px] tracking-wider uppercase px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-bold">Dietary Supplements</span>
+<span class="flex items-center gap-0.5 text-secondary font-label-sm text-[10px]" title="Label Archive Verified">
+<span class="material-symbols-outlined text-[13px]">verified</span>
+<span>Archive</span>
+</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold leading-snug line-clamp-2">
+            DXN Reishi Gano (RG) &amp; Ganocelium (GL)
+          </h2>
+<div class="flex items-center gap-1.5 mt-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-secondary">medication</span>
+<span class="truncate">Capsules / Powder</span>
+</div>
+</div>
+</div>
+<!-- Key Botanical Ingredients -->
+<div class="bg-surface-container-low rounded-xl p-2.5 flex flex-col gap-1">
+<span class="font-label-sm text-[11px] uppercase tracking-wide text-on-surface-variant font-bold">Key Ingredients:</span>
+<p class="font-body-sm text-body-sm text-on-surface leading-snug">
+          Ganoderma lucidum fruit body (90-day RG) &amp; 14-day cultivated mycelium (GL).
+        </p>
+</div>
+<!-- Action Footer -->
+<div class="flex items-center justify-between pt-1 gap-2">
+<button class="flex-1 py-2 px-3 rounded-full bg-surface-container-high text-primary hover:bg-secondary-container hover:text-on-secondary-container font-label-md text-label-md text-center transition-colors flex items-center justify-center gap-1" type="button">
+<span>View Details</span>
+<span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+</button>
+<button class="compare-toggle-btn py-2 px-3.5 rounded-full bg-surface-container-lowest text-secondary hover:bg-surface-container font-label-md text-label-md transition-colors flex items-center gap-1 shadow-sm" data-product-name="Reishi Gano (RG) &amp; GL" type="button">
+<span class="material-symbols-outlined text-[16px]">add_circle</span>
+<span>Compare +</span>
+</button>
+</div>
+</article>
+<!-- CARD 2: Spirulina -->
+<article class="w-full bg-surface-container-lowest rounded-2xl p-4 shadow-[0_4px_20px_-2px_rgba(22,71,52,0.05)] hover:shadow-[0_12px_32px_-4px_rgba(22,71,52,0.08)] transition-all duration-200 flex flex-col gap-3 relative overflow-hidden" data-category="supplements" data-ingredients="100% spirulina platensis microalgae" data-product-card="" data-title="dxn spirulina">
+<div class="flex gap-3.5">
+<div class="w-24 h-28 rounded-xl bg-surface-container overflow-hidden shrink-0 relative flex items-center justify-center p-1.5 shadow-sm">
+<img class="w-full h-full object-cover rounded-lg" data-alt="Educational product visual of DXN Spirulina tablet bottle surrounded by deep emerald green blue-green algae motifs, soft sunlight lighting, organic dietary supplement showcase." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDox5vCoro-N2CeavHXTO4b9JZUx9WXCzYLIQQDxFCmMJGdffD6MV-Wn-kZ9IXqOQs2_u6h50SsUCiLpoNyq4Xj8npoe_57vsYio4OpGXIbkX6GezmW-nm-uT2FjEBEPFr09nFYJdc9FiWDnz0qxqBVv5LmRMiiZUbcGpI9AiS8M2YBkqOKwTaYfc6pejhoGoy31f_yUOoYvqHFes0Js5lIJ7Iv9U4WVz93fZdZtG7HknB19Xp5vv9B4Q"/>
+<span class="material-symbols-outlined absolute top-1 left-1 text-secondary text-[16px]">eco</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1 mb-1">
+<span class="font-label-sm text-[10px] tracking-wider uppercase px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-bold">Dietary Supplements</span>
+<span class="flex items-center gap-0.5 text-secondary font-label-sm text-[10px]">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+<span>Verified</span>
+</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold leading-snug">
+            DXN Spirulina
+          </h2>
+<div class="flex items-center gap-1.5 mt-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-secondary">pill</span>
+<span class="truncate">Tablets / Capsules</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-2.5 flex flex-col gap-1">
+<span class="font-label-sm text-[11px] uppercase tracking-wide text-on-surface-variant font-bold">Key Ingredients:</span>
+<p class="font-body-sm text-body-sm text-on-surface leading-snug">
+          100% pure Spirulina platensis microalgae rich in phycocyanin, proteins, &amp; plant chlorophyll.
+        </p>
+</div>
+<div class="flex items-center justify-between pt-1 gap-2">
+<button class="flex-1 py-2 px-3 rounded-full bg-surface-container-high text-primary hover:bg-secondary-container hover:text-on-secondary-container font-label-md text-label-md text-center transition-colors flex items-center justify-center gap-1" type="button">
+<span>View Details</span>
+<span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+</button>
+<button class="compare-toggle-btn py-2 px-3.5 rounded-full bg-surface-container-lowest text-secondary hover:bg-surface-container font-label-md text-label-md transition-colors flex items-center gap-1 shadow-sm" data-product-name="DXN Spirulina" type="button">
+<span class="material-symbols-outlined text-[16px]">add_circle</span>
+<span>Compare +</span>
+</button>
+</div>
+</article>
+<!-- CARD 3: Lingzhi Coffee 2-in-1 -->
+<article class="w-full bg-surface-container-lowest rounded-2xl p-4 shadow-[0_4px_20px_-2px_rgba(22,71,52,0.05)] hover:shadow-[0_12px_32px_-4px_rgba(22,71,52,0.08)] transition-all duration-200 flex flex-col gap-3 relative overflow-hidden" data-category="beverages" data-ingredients="instant coffee ganoderma lucidum extract sugar-free" data-product-card="" data-title="dxn lingzhi coffee 2-in-1">
+<div class="flex gap-3.5">
+<div class="w-24 h-28 rounded-xl bg-surface-container overflow-hidden shrink-0 relative flex items-center justify-center p-1.5 shadow-sm">
+<img class="w-full h-full object-cover rounded-lg" data-alt="Aesthetic product rendering of DXN Lingzhi Coffee 2-in-1 sachet box beside freshly brewed dark roasted herbal black coffee in a ceramic cup, warm steam, rich roasted tones with deep forest green branding." src="https://lh3.googleusercontent.com/aida-public/AB6AXuApZwTtlg4APyJz-cpRwYLU7qD8-ccoOeZq4KJbatGtOir4F-052BvLTC0rfbn8_ov9OI3pALbG0nAAeRMW5apmFK38qLwREpU2j7hE_CMmJoB9ecIduhifPlV6ZYPg-ZJsVFvDhQ7uYyja97C2TuBHojNwZjF45vbC-hFflzEka8nXX2frSUXX1EQvBpkNIwAeQxgHcsc_w_Ka3q-6CTpPt-wgG3LP_ACqgv1v8zxE3b0wg2JVc3fFZw"/>
+<span class="absolute top-1 left-1 bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-[9px] px-1.5 py-0.5 rounded-full font-bold">Sugar-Free</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1 mb-1">
+<span class="font-label-sm text-[10px] tracking-wider uppercase px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-bold">Beverages</span>
+<span class="flex items-center gap-0.5 text-secondary font-label-sm text-[10px]">
+<span class="material-symbols-outlined text-[13px]">coffee</span>
+<span>Classic</span>
+</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold leading-snug">
+            DXN Lingzhi Coffee 2-in-1
+          </h2>
+<div class="flex items-center gap-1.5 mt-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-secondary">inventory_2</span>
+<span class="truncate">Sachets (Single-serve)</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-2.5 flex flex-col gap-1">
+<span class="font-label-sm text-[11px] uppercase tracking-wide text-on-surface-variant font-bold">Key Ingredients &amp; Note:</span>
+<p class="font-body-sm text-body-sm text-on-surface leading-snug">
+          Premium Instant Coffee, Ganoderma lucidum extract. Sugar-free black coffee blend with zero preservatives.
+        </p>
+</div>
+<div class="flex items-center justify-between pt-1 gap-2">
+<button class="flex-1 py-2 px-3 rounded-full bg-surface-container-high text-primary hover:bg-secondary-container hover:text-on-secondary-container font-label-md text-label-md text-center transition-colors flex items-center justify-center gap-1" type="button">
+<span>View Details</span>
+<span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+</button>
+<button class="compare-toggle-btn py-2 px-3.5 rounded-full bg-surface-container-lowest text-secondary hover:bg-surface-container font-label-md text-label-md transition-colors flex items-center gap-1 shadow-sm" data-product-name="Lingzhi Coffee 2-in-1" type="button">
+<span class="material-symbols-outlined text-[16px]">add_circle</span>
+<span>Compare +</span>
+</button>
+</div>
+</article>
+<!-- CARD 4: Reishi Gano Tea -->
+<article class="w-full bg-surface-container-lowest rounded-2xl p-4 shadow-[0_4px_20px_-2px_rgba(22,71,52,0.05)] hover:shadow-[0_12px_32px_-4px_rgba(22,71,52,0.08)] transition-all duration-200 flex flex-col gap-3 relative overflow-hidden" data-category="beverages" data-ingredients="camellia sinensis tea leaves ganoderma extract" data-product-card="" data-title="dxn reishi gano tea ganozhi tea">
+<div class="flex gap-3.5">
+<div class="w-24 h-28 rounded-xl bg-surface-container overflow-hidden shrink-0 relative flex items-center justify-center p-1.5 shadow-sm">
+<img class="w-full h-full object-cover rounded-lg" data-alt="Editorial wellness photo of DXN Reishi Gano Tea carton box beside a transparent glass cup of golden amber infused herbal tea, fresh green tea leaves, soft ambient morning light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCy61nDBCTTgPLeUIbLoXu2WlMy8ZAdi52J8GLjjFKQHBdkCx3hka9mq8TnkHrhyu77cMw3ws_eQzrq6rWsoPUOIpkBEahVkPUHSgxg1p8ZBWU9chtuZf6hv9Oe4BZgsqyKFPp5QPntNSRK4LXMLOVM3lvOGpPRz9eJSuRzEFCydyFlNpWlc74JUTUgm4dx8j_I1jKdpsSStHSE-1_NJJvxukOYFfKLjAcqzEF-51FkrFi2mCa0pV-mzQ"/>
+<span class="material-symbols-outlined absolute top-1 left-1 text-secondary text-[16px]">emoji_food_beverage</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1 mb-1">
+<span class="font-label-sm text-[10px] tracking-wider uppercase px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-bold">Beverages</span>
+<span class="flex items-center gap-0.5 text-secondary font-label-sm text-[10px]">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+<span>Ganozhi Tea</span>
+</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold leading-snug">
+            DXN Reishi Gano Tea
+          </h2>
+<div class="flex items-center gap-1.5 mt-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-secondary">local_cafe</span>
+<span class="truncate">Tea Bags / Loose Leaves</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-2.5 flex flex-col gap-1">
+<span class="font-label-sm text-[11px] uppercase tracking-wide text-on-surface-variant font-bold">Key Ingredients:</span>
+<p class="font-body-sm text-body-sm text-on-surface leading-snug">
+          High-grade Camellia sinensis tea leaves blended with Ganoderma lucidum extract.
+        </p>
+</div>
+<div class="flex items-center justify-between pt-1 gap-2">
+<button class="flex-1 py-2 px-3 rounded-full bg-surface-container-high text-primary hover:bg-secondary-container hover:text-on-secondary-container font-label-md text-label-md text-center transition-colors flex items-center justify-center gap-1" type="button">
+<span>View Details</span>
+<span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+</button>
+<button class="compare-toggle-btn py-2 px-3.5 rounded-full bg-surface-container-lowest text-secondary hover:bg-surface-container font-label-md text-label-md transition-colors flex items-center gap-1 shadow-sm" data-product-name="Reishi Gano Tea" type="button">
+<span class="material-symbols-outlined text-[16px]">add_circle</span>
+<span>Compare +</span>
+</button>
+</div>
+</article>
+<!-- CARD 5: DXN Cocozhi -->
+<article class="w-full bg-surface-container-lowest rounded-2xl p-4 shadow-[0_4px_20px_-2px_rgba(22,71,52,0.05)] hover:shadow-[0_12px_32px_-4px_rgba(22,71,52,0.08)] transition-all duration-200 flex flex-col gap-3 relative overflow-hidden" data-category="beverages" data-ingredients="cocoa powder ganocelium gl skimmed milk powder malt extract" data-product-card="" data-title="dxn cocozhi">
+<div class="flex gap-3.5">
+<div class="w-24 h-28 rounded-xl bg-surface-container overflow-hidden shrink-0 relative flex items-center justify-center p-1.5 shadow-sm">
+<img class="w-full h-full object-cover rounded-lg" data-alt="Warm studio photo of DXN Cocozhi cocoa drink box with cacao pods and a warm mug of chocolate beverage, natural warm tones, calm botanical backdrop, soft gentle lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBViX1ORbRkTFWrVoA2uyamG_eQVgGUzHNr92077Rg76gGKJQnuuHXMHqZQsvKbzYrG7EQqwYUsgxRwSh03yTT90c0nM9pCbDhVXwEbFIYqObWmE7BGKdCa52SloVcJwfPPdEct13QIwonqylJZB5eA0JHEWpNN_Ynl9cu1LtD77YIzju2cZe5tVDoqwU8IluLR1gGlWeOQ877NSUOduM0UI9Prb6VXqDEY6x6ZwmtSxIzOnp5-SKfWQ"/>
+<span class="absolute top-1 left-1 bg-surface-container-high text-on-surface-variant font-label-sm text-[9px] px-1.5 py-0.5 rounded-full font-bold">Malt Cocoa</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1 mb-1">
+<span class="font-label-sm text-[10px] tracking-wider uppercase px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-bold">Beverages</span>
+<span class="flex items-center gap-0.5 text-secondary font-label-sm text-[10px]">
+<span class="material-symbols-outlined text-[13px]">family_restroom</span>
+<span>Family</span>
+</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold leading-snug">
+            DXN Cocozhi
+          </h2>
+<div class="flex items-center gap-1.5 mt-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-secondary">inventory_2</span>
+<span class="truncate">Single-serve sachets</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-2.5 flex flex-col gap-1">
+<span class="font-label-sm text-[11px] uppercase tracking-wide text-on-surface-variant font-bold">Key Ingredients:</span>
+<p class="font-body-sm text-body-sm text-on-surface leading-snug">
+          Natural cocoa powder, Ganocelium (GL), skimmed milk powder, and nutrient-rich malt extract.
+        </p>
+</div>
+<div class="flex items-center justify-between pt-1 gap-2">
+<button class="flex-1 py-2 px-3 rounded-full bg-surface-container-high text-primary hover:bg-secondary-container hover:text-on-secondary-container font-label-md text-label-md text-center transition-colors flex items-center justify-center gap-1" type="button">
+<span>View Details</span>
+<span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+</button>
+<button class="compare-toggle-btn py-2 px-3.5 rounded-full bg-surface-container-lowest text-secondary hover:bg-surface-container font-label-md text-label-md transition-colors flex items-center gap-1 shadow-sm" data-product-name="DXN Cocozhi" type="button">
+<span class="material-symbols-outlined text-[16px]">add_circle</span>
+<span>Compare +</span>
+</button>
+</div>
+</article>
+<!-- CARD 6: DXN Morinzhi -->
+<article class="w-full bg-surface-container-lowest rounded-2xl p-4 shadow-[0_4px_20px_-2px_rgba(22,71,52,0.05)] hover:shadow-[0_12px_32px_-4px_rgba(22,71,52,0.08)] transition-all duration-200 flex flex-col gap-3 relative overflow-hidden" data-category="beverages" data-ingredients="morinda citrifolia noni fruit juice hibiscus sabdariffa roselle" data-product-card="" data-title="dxn morinzhi mornzhi noni roselle">
+<div class="flex gap-3.5">
+<div class="w-24 h-28 rounded-xl bg-surface-container overflow-hidden shrink-0 relative flex items-center justify-center p-1.5 shadow-sm">
+<img class="w-full h-full object-cover rounded-lg" data-alt="Editorial bottle portrait of DXN Morinzhi herbal fruit drink with fresh Noni fruits and crimson Roselle hibiscus blossoms around, clean botanical kitchen counter backdrop, warm soft illumination." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOiBpSb0TvvngRoQsAsNQolNjY8l4BXFke9KyuNTakgaYh350eiJY498hFrDXkGlI85uxR1jlYyfitFibybByp70LpSRgCRmO3OLF1blNi3o-2sIbNd-x02xYQpXymd0BTuX0_eXsMwNA9iBepOVrVU7gP9dx5Lfhlu3WysAkFI7motcTbJlrMpHi97fy97X08ls5ebQ4RHargpufXbKiRx9C7a7ggRXqrndHertJkURfu9vYEdbv9cA"/>
+<span class="absolute top-1 left-1 bg-secondary-container text-on-secondary-container font-label-sm text-[9px] px-1.5 py-0.5 rounded-full font-bold">Botanical</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1 mb-1">
+<span class="font-label-sm text-[10px] tracking-wider uppercase px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-bold">Beverages</span>
+<span class="flex items-center gap-0.5 text-secondary font-label-sm text-[10px]">
+<span class="material-symbols-outlined text-[13px]">liquor</span>
+<span>Extract</span>
+</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold leading-snug">
+            DXN Morinzhi
+          </h2>
+<div class="flex items-center gap-1.5 mt-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-secondary">water_drop</span>
+<span class="truncate">Liquid bottle</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-2.5 flex flex-col gap-1">
+<span class="font-label-sm text-[11px] uppercase tracking-wide text-on-surface-variant font-bold">Key Ingredients &amp; Lexicon Note:</span>
+<p class="font-body-sm text-body-sm text-on-surface leading-snug">
+          Morinda citrifolia (Noni) fruit juice, Hibiscus sabdariffa (Roselle).
+        </p>
+<span class="font-label-sm text-[11px] text-on-surface-variant italic">
+          Spelling note: DXN Morinzhi (also listed as Mornzhi in study draft notes).
+        </span>
+</div>
+<div class="flex items-center justify-between pt-1 gap-2">
+<button class="flex-1 py-2 px-3 rounded-full bg-surface-container-high text-primary hover:bg-secondary-container hover:text-on-secondary-container font-label-md text-label-md text-center transition-colors flex items-center justify-center gap-1" type="button">
+<span>View Details</span>
+<span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+</button>
+<button class="compare-toggle-btn py-2 px-3.5 rounded-full bg-surface-container-lowest text-secondary hover:bg-surface-container font-label-md text-label-md transition-colors flex items-center gap-1 shadow-sm" data-product-name="DXN Morinzhi" type="button">
+<span class="material-symbols-outlined text-[16px]">add_circle</span>
+<span>Compare +</span>
+</button>
+</div>
+</article>
+<!-- CARD 7: DXN Ganozhi Toothpaste -->
+<article class="w-full bg-surface-container-lowest rounded-2xl p-4 shadow-[0_4px_20px_-2px_rgba(22,71,52,0.05)] hover:shadow-[0_12px_32px_-4px_rgba(22,71,52,0.08)] transition-all duration-200 flex flex-col gap-3 relative overflow-hidden" data-category="oral" data-ingredients="ganoderma extract menthol cleansing agents no saccharin" data-product-card="" data-title="dxn ganozhi toothpaste oral care">
+<div class="flex gap-3.5">
+<div class="w-24 h-28 rounded-xl bg-surface-container overflow-hidden shrink-0 relative flex items-center justify-center p-1.5 shadow-sm">
+<img class="w-full h-full object-cover rounded-lg" data-alt="Refined bathroom still life of DXN Ganozhi Toothpaste tube lying on a natural slate surface with fresh mint leaves and Ganoderma extract droplet illustration, pristine gentle lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRMV4uNYy3QoAMl4N_-Gjfd0d4-2UcMHUysMqjSj16wBKzru4foLsuiwV29JICk2zuKHaAOAMRRMokL5oXPNVdwo6EB5KKzSXaNGY4STRjftybzwMnVLEFKnu0jC3uGAtNMRx5Bmg4rZPuBn3RQ57CTZm9DiIXkqGugcRNIpjy3zeDQIgiSkMeC-gFVdObqiY-TxBybgyqQqgRW2UzPQv06t0BAWHCVMZbxDBrHoa6jbTCaBb0GG8XGg"/>
+<span class="material-symbols-outlined absolute top-1 left-1 text-secondary text-[16px]">dentistry</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1 mb-1">
+<span class="font-label-sm text-[10px] tracking-wider uppercase px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-bold">Oral Care</span>
+<span class="flex items-center gap-0.5 text-secondary font-label-sm text-[10px]">
+<span class="material-symbols-outlined text-[13px]">shield</span>
+<span>Fluoride-Free</span>
+</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold leading-snug">
+            DXN Ganozhi Toothpaste
+          </h2>
+<div class="flex items-center gap-1.5 mt-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-secondary">clean_hands</span>
+<span class="truncate">Paste tube</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-2.5 flex flex-col gap-1">
+<span class="font-label-sm text-[11px] uppercase tracking-wide text-on-surface-variant font-bold">Key Ingredients:</span>
+<p class="font-body-sm text-body-sm text-on-surface leading-snug">
+          Ganoderma extract, menthol, food-grade cleansing agents. No saccharin or artificial coloring.
+        </p>
+</div>
+<div class="flex items-center justify-between pt-1 gap-2">
+<button class="flex-1 py-2 px-3 rounded-full bg-surface-container-high text-primary hover:bg-secondary-container hover:text-on-secondary-container font-label-md text-label-md text-center transition-colors flex items-center justify-center gap-1" type="button">
+<span>View Details</span>
+<span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+</button>
+<button class="compare-toggle-btn py-2 px-3.5 rounded-full bg-surface-container-lowest text-secondary hover:bg-surface-container font-label-md text-label-md transition-colors flex items-center gap-1 shadow-sm" data-product-name="Ganozhi Toothpaste" type="button">
+<span class="material-symbols-outlined text-[16px]">add_circle</span>
+<span>Compare +</span>
+</button>
+</div>
+</article>
+<!-- CARD 8: DXN Ganozhi Soap -->
+<article class="w-full bg-surface-container-lowest rounded-2xl p-4 shadow-[0_4px_20px_-2px_rgba(22,71,52,0.05)] hover:shadow-[0_12px_32px_-4px_rgba(22,71,52,0.08)] transition-all duration-200 flex flex-col gap-3 relative overflow-hidden" data-category="personal" data-ingredients="palm oil base ganoderma lucidum extract vitamin e" data-product-card="" data-title="dxn ganozhi soap personal care">
+<div class="flex gap-3.5">
+<div class="w-24 h-28 rounded-xl bg-surface-container overflow-hidden shrink-0 relative flex items-center justify-center p-1.5 shadow-sm">
+<img class="w-full h-full object-cover rounded-lg" data-alt="Tactile serene aesthetic photograph of DXN Ganozhi Soap cleansing bar placed upon a polished river stone surrounded by gentle water ripples and botanical eucalyptus twigs, soft morning warmth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDELntvLepSCX8YKtvYylkbF0fC-wu6wxGHu8Fa4h7fcissSla3sRuxVfPiTJQ_MP7zEbO3ndtbQnu_jY1Dkjg5tGdNgAREB1vugnHyOMPlV_6lCYowo8911tystwr7_PQ_SsQns4cFBwTVr6HirEf6hyqCCFIctLqva4d2RqVxql4wDXcI9PFWVCfQigsM5ZHEITN0jqSL6O6NGmAqms4VpxuQEv_67ApDJbU5juB3CxhZ-EhpGZ8zHg"/>
+<span class="material-symbols-outlined absolute top-1 left-1 text-secondary text-[16px]">soap</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1 mb-1">
+<span class="font-label-sm text-[10px] tracking-wider uppercase px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-bold">Personal Care</span>
+<span class="flex items-center gap-0.5 text-secondary font-label-sm text-[10px]">
+<span class="material-symbols-outlined text-[13px]">spa</span>
+<span>Vitamin E</span>
+</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold leading-snug">
+            DXN Ganozhi Soap
+          </h2>
+<div class="flex items-center gap-1.5 mt-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-secondary">bathtub</span>
+<span class="truncate">Solid cleansing bar</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-2.5 flex flex-col gap-1">
+<span class="font-label-sm text-[11px] uppercase tracking-wide text-on-surface-variant font-bold">Key Ingredients:</span>
+<p class="font-body-sm text-body-sm text-on-surface leading-snug">
+          Palm oil base enriched with active Ganoderma lucidum extract and skin-conditioning Vitamin E.
+        </p>
+</div>
+<div class="flex items-center justify-between pt-1 gap-2">
+<button class="flex-1 py-2 px-3 rounded-full bg-surface-container-high text-primary hover:bg-secondary-container hover:text-on-secondary-container font-label-md text-label-md text-center transition-colors flex items-center justify-center gap-1" type="button">
+<span>View Details</span>
+<span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+</button>
+<button class="compare-toggle-btn py-2 px-3.5 rounded-full bg-surface-container-lowest text-secondary hover:bg-surface-container font-label-md text-label-md transition-colors flex items-center gap-1 shadow-sm" data-product-name="DXN Ganozhi Soap" type="button">
+<span class="material-symbols-outlined text-[16px]">add_circle</span>
+<span>Compare +</span>
+</button>
+</div>
+</article>
+<!-- Empty State (Delightful Botanical Search Fallback) -->
+<div class="hidden flex-col items-center justify-center text-center p-6 bg-surface-container-lowest rounded-2xl shadow-sm gap-3" id="empty-state">
+<div class="w-14 h-14 rounded-full bg-surface-container-high flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[28px]">nature_people</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">No Matches in Scope</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs leading-relaxed">
+        We couldn't find any item matching that search within our 8 curated products. Try “Ganoderma”, “Coffee”, or “Noni”.
+      </p>
+<button class="mt-1 px-4 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md hover:bg-secondary transition-colors" id="empty-reset-btn" type="button">
+        Clear Search &amp; Show All (8)
+      </button>
+</div>
+</section>
+<!-- Interactive Comparison Floating Action Bar (Micro-delight when user adds items) -->
+<div class="hidden sticky bottom-20 z-40 mx-gutter-mobile p-3 rounded-2xl bg-inverse-surface text-inverse-on-surface shadow-2xl flex items-center justify-between animate-bounce" id="comparison-floater">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-container text-[20px]">balance</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold" id="floater-count-text">1 item selected</span>
+<span class="font-label-sm text-[10px] text-surface-container-high">Ready to cross-analyze</span>
+</div>
+</div>
+<a class="px-3.5 py-1.5 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md font-bold flex items-center gap-1 shadow-md hover:opacity-95" data-path="compare-products" href="#">
+<span>Compare Now</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- Bottom Helper Box -->
+<section class="px-gutter-mobile pt-space-md flex flex-col gap-space-sm">
+<div class="p-4 rounded-2xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center gap-2 text-primary font-bold font-headline-sm text-[16px]">
+<span class="material-symbols-outlined text-secondary text-[20px]">help</span>
+<span>Can't find what you're looking for?</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+        This independent educational guide strictly documents the 8 selected products within our current clinical study scope. For regional formulations, retail availability, or global product lines, please consult your regional distributor or official channel.
+      </p>
+<div class="pt-1 flex items-center gap-2">
+<a class="font-label-sm text-label-sm text-secondary hover:text-primary font-bold flex items-center gap-1" data-path="ingredient-guide" href="#">
+<span>Explore Botanical Lexicon</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Editorial Compliance & Botanical Integrity Banner -->
+<div class="p-3.5 rounded-xl bg-tertiary-fixed/30 flex items-start gap-2.5">
+<span class="material-symbols-outlined text-tertiary text-[18px] shrink-0 mt-0.5">info</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-[11px] font-bold text-tertiary uppercase tracking-wider">Independent Academic Disclaimer</span>
+<p class="font-label-sm text-label-sm text-on-tertiary-fixed-variant leading-snug">
+          DXNANCHAL is not a medical practice nor an official direct-selling portal. Nutritional and herbal statements have not been evaluated for prescription diagnostics.
+        </p>
+</div>
+</div>
+</section>
+<!-- Client-Side Filtering & Sorting Logic -->
+<script>
+    (function initCatalogueControls() {
+      const searchInput = document.getElementById('product-search-input');
+      const clearBtn = document.getElementById('clear-search-btn');
+      const filterPills = document.querySelectorAll('.filter-pill');
+      const sortSelect = document.getElementById('sort-dropdown');
+      const resetBtn = document.getElementById('reset-filter-btn');
+      const emptyResetBtn = document.getElementById('empty-reset-btn');
+      const catalogue = document.getElementById('products-catalogue');
+      const productCards = Array.from(document.querySelectorAll('[data-product-card]'));
+      const emptyState = document.getElementById('empty-state');
+      const countLabel = document.getElementById('active-results-count');
+      const floater = document.getElementById('comparison-floater');
+      const floaterCount = document.getElementById('floater-count-text');
+
+      let currentCategory = 'all';
+      let currentQuery = '';
+      const comparedItems = new Set();
+
+      function applyFilters() {
+        let visibleCount = 0;
+
+        productCards.forEach(card => {
+          const cardCat = card.getAttribute('data-category');
+          const title = card.getAttribute('data-title') || '';
+          const ing = card.getAttribute('data-ingredients') || '';
+          
+          const matchesCat = (currentCategory === 'all') || (cardCat === currentCategory);
+          const matchesSearch = !currentQuery || 
+                                title.toLowerCase().includes(currentQuery) || 
+                                ing.toLowerCase().includes(currentQuery);
+
+          if (matchesCat && matchesSearch) {
+            card.classList.remove('hidden');
+            visibleCount++;
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+
+        if (visibleCount === 0) {
+          emptyState.classList.remove('hidden');
+          emptyState.classList.add('flex');
+        } else {
+          emptyState.classList.add('hidden');
+          emptyState.classList.remove('flex');
+        }
+
+        countLabel.textContent = `Showing ${visibleCount} of 8 products`;
+      }
+
+      function sortCards() {
+        const val = sortSelect.value;
+        const sorted = [...productCards].sort((a, b) => {
+          const nameA = (a.getAttribute('data-title') || '').trim();
+          const nameB = (b.getAttribute('data-title') || '').trim();
+          const catA = (a.getAttribute('data-category') || '').trim();
+          const catB = (b.getAttribute('data-category') || '').trim();
+
+          if (val === 'name-asc') {
+            return nameA.localeCompare(nameB);
+          } else if (val === 'name-desc') {
+            return nameB.localeCompare(nameA);
+          } else if (val === 'category') {
+            return catA.localeCompare(catB) || nameA.localeCompare(nameB);
+          }
+          return 0;
+        });
+
+        sorted.forEach(card => catalogue.appendChild(card));
+        if (emptyState) catalogue.appendChild(emptyState);
+      }
+
+      // Search input listener
+      searchInput.addEventListener('input', (e) => {
+        currentQuery = e.target.value.trim().toLowerCase();
+        if (currentQuery.length > 0) {
+          clearBtn.classList.remove('hidden');
+        } else {
+          clearBtn.classList.add('hidden');
+        }
+        applyFilters();
+      });
+
+      clearBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        currentQuery = '';
+        clearBtn.classList.add('hidden');
+        searchInput.focus();
+        applyFilters();
+      });
+
+      // Filter pills
+      filterPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          filterPills.forEach(p => {
+            p.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+            p.classList.add('bg-surface-container-lowest', 'text-on-surface');
+            const counter = p.querySelector('span:last-child');
+            if (counter) {
+              counter.classList.remove('bg-surface-container-lowest', 'text-primary');
+              counter.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+            }
+          });
+
+          pill.classList.remove('bg-surface-container-lowest', 'text-on-surface');
+          pill.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+          const activeCounter = pill.querySelector('span:last-child');
+          if (activeCounter) {
+            activeCounter.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+            activeCounter.classList.add('bg-surface-container-lowest', 'text-primary');
+          }
+
+          currentCategory = pill.getAttribute('data-category') || 'all';
+          applyFilters();
+        });
+      });
+
+      // Sorting
+      sortSelect.addEventListener('change', () => {
+        sortCards();
+        applyFilters();
+      });
+
+      // Reset
+      function resetAll() {
+        searchInput.value = '';
+        currentQuery = '';
+        clearBtn.classList.add('hidden');
+        const defaultAllPill = document.querySelector('[data-category="all"]');
+        if (defaultAllPill) defaultAllPill.click();
+        sortSelect.value = 'name-asc';
+        sortCards();
+        applyFilters();
+      }
+
+      resetBtn.addEventListener('click', resetAll);
+      if (emptyResetBtn) emptyResetBtn.addEventListener('click', resetAll);
+
+      // Compare micro-interaction
+      document.querySelectorAll('.compare-toggle-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const name = btn.getAttribute('data-product-name');
+          const icon = btn.querySelector('.material-symbols-outlined');
+          const span = btn.querySelector('span:last-child');
+
+          if (comparedItems.has(name)) {
+            comparedItems.delete(name);
+            btn.classList.remove('bg-secondary', 'text-on-secondary');
+            btn.classList.add('bg-surface-container-lowest', 'text-secondary');
+            icon.textContent = 'add_circle';
+            span.textContent = 'Compare +';
+          } else {
+            comparedItems.add(name);
+            btn.classList.remove('bg-surface-container-lowest', 'text-secondary');
+            btn.classList.add('bg-secondary', 'text-on-secondary');
+            icon.textContent = 'check_circle';
+            span.textContent = 'Added';
+          }
+
+          if (comparedItems.size > 0) {
+            floater.classList.remove('hidden');
+            floaterCount.textContent = `${comparedItems.size} ${comparedItems.size === 1 ? 'item' : 'items'} in Tray`;
+          } else {
+            floater.classList.add('hidden');
+          }
+        });
+      });
+    })();
+  </script>
+</div><footer class="w-full bg-surface-container-low mt-space-xl pt-space-lg pb-32 px-gutter-mobile flex flex-col gap-space-md"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-[20px]">verified</span><span class="font-label-md text-label-md text-primary uppercase font-bold tracking-wider">Independent Educational Resource</span></div><div class="p-space-sm rounded-xl bg-surface-container-lowest shadow-[0_2px_8px_rgba(22,71,52,0.03)]"><p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Independent informational &amp; educational guide. Not an official DXN corporate store. Always consult packaging labels and healthcare professionals.</p></div><div class="grid grid-cols-2 gap-y-2 gap-x-4 pt-space-xs"><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary py-1" data-path="all-products" href="#">All Products</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary py-1" data-path="compare-products" href="#">Compare</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary py-1" data-path="ingredient-guide" href="#">Ingredient Guide</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary py-1" data-path="frequently-asked-questions" href="#">FAQs</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary py-1" data-path="about-guide" href="#">About</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary py-1" data-path="contact-inquiries" href="#">Contact</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary py-1" data-path="privacy-policy" href="#">Privacy</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary py-1" data-path="terms-of-use" href="#">Terms</a></div><div class="flex flex-col gap-1 pt-space-sm"><p class="font-label-sm text-label-sm text-on-surface-variant">© 2025 DXNANCHAL Product Guide.</p><p class="font-label-sm text-label-sm text-on-tertiary-container font-semibold">Clinical and Botanical Database Last Verified 2025.</p></div></footer></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_-2px_16px_rgba(22,71,52,0.06)]" data-active-classes="text-primary font-bold"><div class="h-16 px-gutter-mobile flex justify-around items-center"><a class="flex flex-col items-center justify-center min-w-[48px] h-11 gap-0.5 text-on-surface-variant hover:text-primary transition-colors" data-path="home" href="#"><span class="material-symbols-outlined text-[22px]">spa</span><span class="font-label-sm text-label-sm tracking-tight">Home</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[48px] h-11 gap-0.5 transition-colors text-primary font-bold" data-path="all-products" href="#"><span class="material-symbols-outlined text-[22px]">category</span><span class="font-label-sm text-label-sm tracking-tight">Products</span></a><a class="flex flex-col items-center justify-center min-w-[48px] h-11 gap-0.5 text-on-surface-variant hover:text-primary transition-colors" data-path="compare-products" href="#"><span class="material-symbols-outlined text-[22px]">balance</span><span class="font-label-sm text-label-sm tracking-tight">Compare</span></a><a class="flex flex-col items-center justify-center min-w-[48px] h-11 gap-0.5 text-on-surface-variant hover:text-primary transition-colors" data-path="ingredient-guide" href="#"><span class="material-symbols-outlined text-[22px]">nature</span><span class="font-label-sm text-label-sm tracking-tight">Ingredients</span></a><a class="flex flex-col items-center justify-center min-w-[48px] h-11 gap-0.5 text-on-surface-variant hover:text-primary transition-colors" data-path="frequently-asked-questions" href="#"><span class="material-symbols-outlined text-[22px]">help_outline</span><span class="font-label-sm text-label-sm tracking-tight">FAQs</span></a></div></nav></body></html>
