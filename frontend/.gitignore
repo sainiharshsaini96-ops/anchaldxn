@@ -1,0 +1,21 @@
+# Frontend dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build outputs
+dist/
+dist-ssr/
+build/
+*.local
+
+# Environment files
+.env
+.env.*
+!.env.example
+*.env
+
+# Editor and OS
+.DS_Store
+Thumbs.db

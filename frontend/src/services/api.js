@@ -1,25 +1,50 @@
 import { productsData } from '../data/productsData';
 import { ingredientsData } from '../data/ingredientsData';
 
-const API_BASE = import.meta.env.VITE_API_BASE_URL || '/api';
+/**
+ * Robust API URL builder that correctly handles:
+ * 1. Absolute URLs (e.g. http://localhost:5000/api)
+ * 2. Relative paths (e.g. /api with Vite dev proxy)
+ * 3. Query search params
+ */
+const getApiUrl = (endpoint, params = null) => {
+  const base = import.meta.env.VITE_API_BASE_URL || '/api';
+  let fullUrl;
+  if (base.startsWith('http://') || base.startsWith('https://')) {
+    fullUrl = new URL(`${base.replace(/\/$/, '')}${endpoint}`);
+  } else {
+    fullUrl = new URL(
+      `${window.location.origin}${base.startsWith('/') ? '' : '/'}${base.replace(/\/$/, '')}${endpoint}`
+    );
+  }
+  if (params) {
+    Object.entries(params).forEach(([key, val]) => {
+      if (val !== undefined && val !== null && val !== '') {
+        fullUrl.searchParams.set(key, val);
+      }
+    });
+  }
+  return fullUrl.toString();
+};
 
 /**
  * 1. READ ALL Products (GET /api/products)
  */
 export const fetchProducts = async (params = {}) => {
   try {
-    const url = new URL(`${window.location.origin}${API_BASE}/products`);
+    const queryParams = {};
     if (params.category && params.category !== 'all') {
-      url.searchParams.set('category', params.category);
+      queryParams.category = params.category;
     }
     if (params.search) {
-      url.searchParams.set('search', params.search);
+      queryParams.search = params.search;
     }
     if (params.sort) {
-      url.searchParams.set('sort', params.sort);
+      queryParams.sort = params.sort;
     }
 
-    const res = await fetch(url.toString());
+    const url = getApiUrl('/products', queryParams);
+    const res = await fetch(url);
     if (!res.ok) throw new Error('Network response was not ok');
     const json = await res.json();
     return json.data || productsData;
@@ -54,7 +79,8 @@ export const fetchProducts = async (params = {}) => {
  */
 export const fetchProductBySlug = async (slug) => {
   try {
-    const res = await fetch(`${API_BASE}/products/${slug}`);
+    const url = getApiUrl(`/products/${slug}`);
+    const res = await fetch(url);
     if (!res.ok) throw new Error('Product not found');
     const json = await res.json();
     return json.data;
@@ -70,7 +96,8 @@ export const fetchProductBySlug = async (slug) => {
  * 3. ADD Product (POST /api/products)
  */
 export const addProduct = async (productData) => {
-  const res = await fetch(`${API_BASE}/products`, {
+  const url = getApiUrl('/products');
+  const res = await fetch(url, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(productData),
@@ -86,7 +113,8 @@ export const addProduct = async (productData) => {
  * 4. UPDATE Product (PUT /api/products/:id)
  */
 export const updateProduct = async (idOrSlug, productData) => {
-  const res = await fetch(`${API_BASE}/products/${idOrSlug}`, {
+  const url = getApiUrl(`/products/${idOrSlug}`);
+  const res = await fetch(url, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(productData),
@@ -102,7 +130,8 @@ export const updateProduct = async (idOrSlug, productData) => {
  * 5. DELETE Product (DELETE /api/products/:id)
  */
 export const deleteProduct = async (idOrSlug) => {
-  const res = await fetch(`${API_BASE}/products/${idOrSlug}`, {
+  const url = getApiUrl(`/products/${idOrSlug}`);
+  const res = await fetch(url, {
     method: 'DELETE',
   });
   const json = await res.json();
@@ -117,7 +146,8 @@ export const deleteProduct = async (idOrSlug) => {
  */
 export const checkHealth = async () => {
   try {
-    const res = await fetch(`${API_BASE}/health`);
+    const url = getApiUrl('/health');
+    const res = await fetch(url);
     if (!res.ok) throw new Error('Healthcheck failed');
     return await res.json();
   } catch (err) {
@@ -134,14 +164,16 @@ export const checkHealth = async () => {
  */
 export const fetchIngredients = async (params = {}) => {
   try {
-    const url = new URL(`${window.location.origin}${API_BASE}/ingredients`);
+    const queryParams = {};
     if (params.category && params.category !== 'all') {
-      url.searchParams.set('category', params.category);
+      queryParams.category = params.category;
     }
     if (params.search) {
-      url.searchParams.set('search', params.search);
+      queryParams.search = params.search;
     }
-    const res = await fetch(url.toString());
+
+    const url = getApiUrl('/ingredients', queryParams);
+    const res = await fetch(url);
     if (!res.ok) throw new Error('Network response was not ok');
     const json = await res.json();
     return json.data || ingredientsData;
@@ -165,11 +197,30 @@ export const fetchIngredients = async (params = {}) => {
 };
 
 /**
+ * READ Single Ingredient (GET /api/ingredients/:slug)
+ */
+export const fetchIngredientBySlug = async (slug) => {
+  try {
+    const url = getApiUrl(`/ingredients/${slug}`);
+    const res = await fetch(url);
+    if (!res.ok) throw new Error('Ingredient not found');
+    const json = await res.json();
+    return json.data;
+  } catch (error) {
+    console.warn('[API Fallback]: Fetching ingredient detail from local archive:', error.message);
+    const item = ingredientsData.find((i) => i.slug === slug || i.slug.includes(slug));
+    if (!item) throw new Error('Ingredient not found');
+    return item;
+  }
+};
+
+/**
  * Direct Inquiries (POST /api/inquiries)
  */
 export const submitInquiry = async (data) => {
   try {
-    const res = await fetch(`${API_BASE}/inquiries`, {
+    const url = getApiUrl('/inquiries');
+    const res = await fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
@@ -186,5 +237,21 @@ export const submitInquiry = async (data) => {
       message: 'Thank you! Your message has been received by Anchal.',
       data,
     };
+  }
+};
+
+/**
+ * Fetch All Inquiries (GET /api/inquiries)
+ */
+export const fetchInquiries = async () => {
+  try {
+    const url = getApiUrl('/inquiries');
+    const res = await fetch(url);
+    if (!res.ok) throw new Error('Failed to fetch inquiries');
+    const json = await res.json();
+    return json.data || [];
+  } catch (error) {
+    console.warn('[API Fallback]: Fetching inquiries fallback:', error.message);
+    return [];
   }
 };

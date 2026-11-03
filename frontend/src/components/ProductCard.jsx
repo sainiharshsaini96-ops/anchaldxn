@@ -8,6 +8,7 @@ export default function ProductCard({ product, detailed = false }) {
   const { addToCompare, isInCompare } = useCompare();
 
   const isAdded = isInCompare(product.slug || product.id);
+  const productIdentifier = product.slug || product.id || product._id;
 
   const getCategoryTitle = (cat) => {
     switch (cat) {
@@ -78,7 +79,7 @@ export default function ProductCard({ product, detailed = false }) {
           </div>
 
           <h3 className="font-headline-sm text-headline-sm text-primary font-bold leading-snug line-clamp-2">
-            <Link to={`/product/${product.slug}`} className="hover:text-secondary transition-colors">
+            <Link to={`/product/${productIdentifier}`} className="hover:text-secondary transition-colors">
               {getDisplayTitle()}
             </Link>
           </h3>
@@ -113,7 +114,7 @@ export default function ProductCard({ product, detailed = false }) {
       {/* Action Footer */}
       <div className="flex items-center justify-between pt-1 gap-2">
         <Link
-          to={`/product/${product.slug}`}
+          to={`/product/${productIdentifier}`}
           className="flex-1 py-2 px-3 rounded-full bg-surface-container-high text-primary hover:bg-secondary-container hover:text-on-secondary-container font-label-md text-label-md text-center transition-colors flex items-center justify-center gap-1 font-semibold"
         >
           <span>{t('btn-view-details')}</span>

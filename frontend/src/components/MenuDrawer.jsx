@@ -94,6 +94,14 @@ export default function MenuDrawer({ isOpen, onClose, onOpenContact }) {
               <span>{t('tab-ingredients')}</span>
             </Link>
             <Link
+              to="/faqs"
+              onClick={onClose}
+              className="p-3 rounded-xl hover:bg-surface-container-low flex items-center gap-3 text-on-surface font-label-md text-label-md font-semibold transition-colors"
+            >
+              <span className="material-symbols-outlined text-secondary text-[22px]">help_outline</span>
+              <span>{t('tab-faqs')}</span>
+            </Link>
+            <Link
               to="/about"
               onClick={onClose}
               className="p-3 rounded-xl hover:bg-surface-container-low flex items-center gap-3 text-on-surface font-label-md text-label-md font-semibold transition-colors"

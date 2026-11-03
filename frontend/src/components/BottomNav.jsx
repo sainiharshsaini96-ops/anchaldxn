@@ -12,11 +12,11 @@ export default function BottomNav() {
     { to: '/products', label: t('tab-products'), icon: 'local_pharmacy' },
     { to: '/compare', label: t('tab-compare'), icon: 'balance', badge: count },
     { to: '/ingredients', label: t('tab-ingredients'), icon: 'eco' },
-    { to: '/about', label: t('owner-title'), icon: 'person' },
+    { to: '/faqs', label: t('tab-faqs'), icon: 'help_outline' },
   ];
 
   return (
-    <nav className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-surface-container-lowest/90 backdrop-blur-xl border-t border-surface-container-high/80 pb-safe">
+    <nav className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-surface-container-lowest/90 backdrop-blur-xl border-t border-surface-container-high/80 pb-safe shadow-[0_-2px_12px_rgba(22,71,52,0.05)]">
       <div className="flex items-center justify-around h-16 px-1">
         {navItems.map((item) => (
           <NavLink

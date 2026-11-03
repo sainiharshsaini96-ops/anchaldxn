@@ -15,12 +15,13 @@ import Products from './pages/Products';
 import ProductDetail from './pages/ProductDetail';
 import Compare from './pages/Compare';
 import Ingredients from './pages/Ingredients';
+import Faqs from './pages/Faqs';
 import About from './pages/About';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   }, [pathname]);
   return null;
 }
@@ -57,7 +58,7 @@ function MainLayout() {
       />
 
       {/* Main Content Area */}
-      <main className="flex-1 w-full pt-16">
+      <main className="flex-1 w-full pt-16 page-transition">
         <Routes>
           <Route
             path="/"
@@ -67,6 +68,7 @@ function MainLayout() {
           <Route path="/product/:id" element={<ProductDetail key={refreshKey} />} />
           <Route path="/compare" element={<Compare key={refreshKey} />} />
           <Route path="/ingredients" element={<Ingredients key={refreshKey} />} />
+          <Route path="/faqs" element={<Faqs key={refreshKey} onOpenContact={() => setContactOpen(true)} />} />
           <Route path="/about" element={<About onOpenContact={() => setContactOpen(true)} />} />
           <Route
             path="*"

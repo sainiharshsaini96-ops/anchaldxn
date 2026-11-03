@@ -16,6 +16,8 @@ export default function Header({ onOpenSearch, onOpenMenu, onOpenContact, onOpen
         return t('tab-compare');
       case '/ingredients':
         return t('tab-ingredients');
+      case '/faqs':
+        return t('tab-faqs');
       case '/about':
         return t('owner-title');
       default:
@@ -79,6 +81,22 @@ export default function Header({ onOpenSearch, onOpenMenu, onOpenContact, onOpen
             }`}
           >
             {t('tab-ingredients')}
+          </Link>
+          <Link
+            to="/faqs"
+            className={`font-label-md text-label-md transition-colors ${
+              location.pathname === '/faqs' ? 'text-primary font-bold' : 'text-on-surface-variant hover:text-primary'
+            }`}
+          >
+            {t('tab-faqs')}
+          </Link>
+          <Link
+            to="/about"
+            className={`font-label-md text-label-md transition-colors ${
+              location.pathname === '/about' ? 'text-primary font-bold' : 'text-on-surface-variant hover:text-primary'
+            }`}
+          >
+            {lang === 'hi' ? 'परिचय' : 'About'}
           </Link>
         </nav>
 

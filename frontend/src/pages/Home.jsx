@@ -57,7 +57,12 @@ export default function Home({ onOpenContact }) {
         <div className="flex flex-wrap items-center gap-3 pt-1">
           <a
             href="#products-archive"
-            className="px-6 py-3 rounded-full bg-primary text-on-primary font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-md hover:bg-secondary transition-all active:scale-95"
+            onClick={(e) => {
+              e.preventDefault();
+              const el = document.getElementById('products-archive');
+              if (el) el.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="px-6 py-3 rounded-full bg-primary text-on-primary font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-md hover:bg-secondary transition-all active:scale-95 cursor-pointer"
           >
             <span>{t('hero-cta-explore')}</span>
             <span className="material-symbols-outlined text-[18px]">arrow_downward</span>
@@ -315,7 +320,7 @@ export default function Home({ onOpenContact }) {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {/* Bot 1 */}
           <Link
-            to="/ingredients"
+            to="/ingredients?search=Ganoderma"
             className="p-4 rounded-2xl bg-surface-container-lowest border border-surface-container hover:shadow-md transition-all flex items-center gap-3 group"
           >
             <div className="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center shrink-0 text-secondary group-hover:scale-105 transition-transform">
@@ -333,7 +338,7 @@ export default function Home({ onOpenContact }) {
 
           {/* Bot 2 */}
           <Link
-            to="/ingredients"
+            to="/ingredients?search=Spirulina"
             className="p-4 rounded-2xl bg-surface-container-lowest border border-surface-container hover:shadow-md transition-all flex items-center gap-3 group"
           >
             <div className="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center shrink-0 text-secondary group-hover:scale-105 transition-transform">
@@ -351,7 +356,7 @@ export default function Home({ onOpenContact }) {
 
           {/* Bot 3 */}
           <Link
-            to="/ingredients"
+            to="/ingredients?search=Morinda"
             className="p-4 rounded-2xl bg-surface-container-lowest border border-surface-container hover:shadow-md transition-all flex items-center gap-3 group"
           >
             <div className="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center shrink-0 text-secondary group-hover:scale-105 transition-transform">

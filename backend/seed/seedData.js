@@ -1,6 +1,16 @@
 const { MongoClient } = require('mongodb');
 const path = require('path');
-require('dotenv').config({ path: path.resolve(__dirname, '../../.env') });
+const fs = require('fs');
+
+const localEnv = path.resolve(__dirname, '../.env');
+const rootEnv = path.resolve(__dirname, '../../.env');
+if (fs.existsSync(localEnv)) {
+  require('dotenv').config({ path: localEnv });
+}
+if (fs.existsSync(rootEnv)) {
+  require('dotenv').config({ path: rootEnv });
+}
+require('dotenv').config();
 
 const products = [
   {

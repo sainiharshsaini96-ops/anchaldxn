@@ -2,12 +2,26 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { productsData } from '../data/productsData';
 import { ingredientsData } from '../data/ingredientsData';
+import { fetchProducts, fetchIngredients } from '../services/api';
 import { useLanguage } from '../context/LanguageContext';
 
 export default function SearchModal({ isOpen, onClose }) {
   const [query, setQuery] = useState('');
+  const [products, setProducts] = useState(productsData);
+  const [ingredients, setIngredients] = useState(ingredientsData);
   const { lang, t } = useLanguage();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isOpen) {
+      fetchProducts()
+        .then((p) => setProducts(p))
+        .catch(() => setProducts(productsData));
+      fetchIngredients()
+        .then((i) => setIngredients(i))
+        .catch(() => setIngredients(ingredientsData));
+    }
+  }, [isOpen]);
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -24,32 +38,32 @@ export default function SearchModal({ isOpen, onClose }) {
   const clean = query.trim().toLowerCase();
 
   const matchedProducts = clean
-    ? productsData.filter(
+    ? products.filter(
         (p) =>
           p.name.toLowerCase().includes(clean) ||
-          p.subtitle.toLowerCase().includes(clean) ||
-          p.keyIngredients.toLowerCase().includes(clean) ||
-          p.shortDescription.toLowerCase().includes(clean)
+          (p.subtitle && p.subtitle.toLowerCase().includes(clean)) ||
+          (p.keyIngredients && p.keyIngredients.toLowerCase().includes(clean)) ||
+          (p.shortDescription && p.shortDescription.toLowerCase().includes(clean))
       )
     : [];
 
   const matchedIngredients = clean
-    ? ingredientsData.filter(
+    ? ingredients.filter(
         (i) =>
           i.botanicalName.toLowerCase().includes(clean) ||
           i.commonName.toLowerCase().includes(clean) ||
-          i.overview.toLowerCase().includes(clean)
+          (i.overview && i.overview.toLowerCase().includes(clean))
       )
     : [];
 
-  const handleSelectProduct = (slug) => {
+  const handleSelectProduct = (slugOrId) => {
     onClose();
-    navigate(`/product/${slug}`);
+    navigate(`/product/${slugOrId}`);
   };
 
-  const handleSelectIngredient = () => {
+  const handleSelectIngredient = (term) => {
     onClose();
-    navigate(`/ingredients`);
+    navigate(`/ingredients?search=${encodeURIComponent(term)}`);
   };
 
   return (
@@ -68,8 +82,8 @@ export default function SearchModal({ isOpen, onClose }) {
             onChange={(e) => setQuery(e.target.value)}
             placeholder={
               lang === 'hi'
-                ? 'उत्पाद या सामग्री खोजें (उदा. Reishi, Spirulina, Noni)...'
-                : 'Search products or botanical ingredients (e.g., Reishi, Spirulina, Noni)...'
+                ? 'उत्पाद या सामग्री खोजें (उदा. Reishi, Spirulina, Noni, कॉफी)...'
+                : 'Search products or botanical ingredients (e.g., Reishi, Spirulina, Noni, Coffee)...'
             }
             className="flex-1 bg-transparent text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none"
           />
@@ -134,8 +148,8 @@ export default function SearchModal({ isOpen, onClose }) {
                   <div className="flex flex-col gap-1.5">
                     {matchedProducts.map((p) => (
                       <div
-                        key={p.slug}
-                        onClick={() => handleSelectProduct(p.slug)}
+                        key={p.slug || p.id}
+                        onClick={() => handleSelectProduct(p.slug || p.id)}
                         className="p-2.5 rounded-xl bg-surface-container-low hover:bg-surface-container flex items-center gap-3 cursor-pointer transition-colors"
                       >
                         <img
@@ -169,8 +183,8 @@ export default function SearchModal({ isOpen, onClose }) {
                   <div className="flex flex-col gap-1.5">
                     {matchedIngredients.map((i) => (
                       <div
-                        key={i.slug}
-                        onClick={handleSelectIngredient}
+                        key={i.slug || i.id}
+                        onClick={() => handleSelectIngredient(i.botanicalName || i.slug)}
                         className="p-2.5 rounded-xl bg-surface-container-low hover:bg-surface-container flex items-center gap-3 cursor-pointer transition-colors"
                       >
                         <div className="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">

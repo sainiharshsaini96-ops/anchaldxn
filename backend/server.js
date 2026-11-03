@@ -2,7 +2,17 @@ const path = require('path');
 const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
-require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
+const fs = require('fs');
+
+const localEnv = path.resolve(__dirname, '.env');
+const rootEnv = path.resolve(__dirname, '../.env');
+if (fs.existsSync(localEnv)) {
+  require('dotenv').config({ path: localEnv });
+}
+if (fs.existsSync(rootEnv)) {
+  require('dotenv').config({ path: rootEnv });
+}
+require('dotenv').config();
 
 const { connectDB, getDbStatus, closeDB } = require('./config/db');
 const productRoutes = require('./routes/productRoutes');

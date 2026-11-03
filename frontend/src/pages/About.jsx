@@ -14,7 +14,9 @@ export default function About({ onOpenContact }) {
           <span>Home</span>
         </Link>
         <span className="text-outline-variant">/</span>
-        <span className="text-primary font-bold">About Anchal</span>
+        <span className="text-primary font-bold">
+          {lang === 'hi' ? 'आंचल के बारे में' : 'About Anchal'}
+        </span>
       </nav>
 
       {/* Hero Bio Card */}

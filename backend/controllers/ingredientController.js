@@ -1,3 +1,4 @@
+const { getCollection } = require('../config/db');
 const Ingredient = require('../models/Ingredient');
 const { ingredients: defaultIngredients } = require('../seed/seedData');
 const mongoose = require('mongoose');
@@ -9,7 +10,9 @@ exports.getIngredients = async (req, res) => {
   try {
     const { category, search } = req.query;
 
-    if (mongoose.connection.readyState === 1) {
+    // 1. Try Native MongoDB Atlas driver collection
+    const collection = getCollection('ingredients');
+    if (collection) {
       const filter = {};
       if (category && category !== 'all') {
         filter.category = category;
@@ -20,7 +23,34 @@ exports.getIngredients = async (req, res) => {
           { botanicalName: regex },
           { commonName: regex },
           { overview: regex },
-          { biochemicalComponents: regex }
+          { biochemicalComponents: regex },
+        ];
+      }
+
+      const items = await collection.find(filter).sort({ botanicalName: 1 }).toArray();
+      if (items && items.length > 0) {
+        return res.json({
+          success: true,
+          count: items.length,
+          data: items,
+          source: 'mongodb-atlas',
+        });
+      }
+    }
+
+    // 2. Try Mongoose if connected
+    if (mongoose.connection && mongoose.connection.readyState === 1) {
+      const filter = {};
+      if (category && category !== 'all') {
+        filter.category = category;
+      }
+      if (search) {
+        const regex = new RegExp(search, 'i');
+        filter.$or = [
+          { botanicalName: regex },
+          { commonName: regex },
+          { overview: regex },
+          { biochemicalComponents: regex },
         ];
       }
 
@@ -30,12 +60,12 @@ exports.getIngredients = async (req, res) => {
           success: true,
           count: ingredients.length,
           data: ingredients,
-          source: 'mongodb'
+          source: 'mongodb-mongoose',
         });
       }
     }
 
-    // Fallback to in-memory store
+    // 3. Resilient In-Memory Archive Fallback
     let result = [...defaultIngredients];
 
     if (category && category !== 'all') {
@@ -49,7 +79,8 @@ exports.getIngredients = async (req, res) => {
           i.botanicalName.toLowerCase().includes(s) ||
           i.commonName.toLowerCase().includes(s) ||
           i.overview.toLowerCase().includes(s) ||
-          i.biochemicalComponents.some((comp) => comp.toLowerCase().includes(s))
+          (i.biochemicalComponents &&
+            i.biochemicalComponents.some((comp) => comp.toLowerCase().includes(s)))
       );
     }
 
@@ -57,7 +88,7 @@ exports.getIngredients = async (req, res) => {
       success: true,
       count: result.length,
       data: result,
-      source: 'in-memory-archive'
+      source: 'in-memory-archive',
     });
   } catch (error) {
     console.error('Error in getIngredients:', error);
@@ -72,19 +103,32 @@ exports.getIngredientBySlug = async (req, res) => {
   try {
     const { slug } = req.params;
 
-    if (mongoose.connection.readyState === 1) {
+    // 1. Try Native MongoDB Atlas driver collection
+    const collection = getCollection('ingredients');
+    if (collection) {
+      const item = await collection.findOne({
+        $or: [{ slug }, { id: slug }],
+      });
+      if (item) {
+        return res.json({ success: true, data: item, source: 'mongodb-atlas' });
+      }
+    }
+
+    // 2. Try Mongoose
+    if (mongoose.connection && mongoose.connection.readyState === 1) {
       let ingredient = await Ingredient.findOne({ slug });
       if (!ingredient && mongoose.Types.ObjectId.isValid(slug)) {
         ingredient = await Ingredient.findById(slug);
       }
       if (ingredient) {
-        return res.json({ success: true, data: ingredient, source: 'mongodb' });
+        return res.json({ success: true, data: ingredient, source: 'mongodb-mongoose' });
       }
     }
 
+    // 3. Fallback to in-memory store
     const item = defaultIngredients.find((i) => i.slug === slug || i.slug.includes(slug));
     if (!item) {
-      return res.status(404).json({ success: false, message: 'Ingredient not found' });
+      return res.status(404).json({ success: false, message: 'Botanical ingredient not found' });
     }
 
     res.json({ success: true, data: item, source: 'in-memory-archive' });
